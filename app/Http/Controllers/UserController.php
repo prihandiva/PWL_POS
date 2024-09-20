@@ -17,7 +17,7 @@ class UserController extends Controller
     //     ];
 
     //     UserModel::create($data);
-    $user = UserModel::all();//ambil semua data dari tabel m_user
+    //$user = UserModel::all();//ambil semua data dari tabel m_user
     // return view('user',['data'=> $user]);
 
     // $user = UserModel::find(1);
@@ -66,8 +66,9 @@ class UserController extends Controller
             
         //     // $user->isDirty(); // false
         //     // $user->isClean(); // true.
-
-    return view('user', ['data' => $user]); // Kirim hasil ke view
+        $user = UserModel::with('level')->get();
+        //dd($user);
+     return view('user', ['data' => $user]); // Kirim hasil ke view
 
 }
     public function tambah(){
@@ -82,6 +83,27 @@ class UserController extends Controller
             'level_id' => $request->level_id
         
         ]);
+        return redirect('/user');
+    }
+    public function ubah($id){
+        $user = UserMOdel::find($id);
+        return view('user_ubah',['data'=> $user]);
+    }
+    public function ubah_simpan($id, Request $request){
+        $user = UserModel::find($id);
+
+        $user->username = $request->username;
+        $user->nama = $request->nama;
+        $user->password = Hash::make('$request->password');
+        $user->level_id = $request->level_id;
+
+        $user->save();
+        return redirect('/user');
+    }
+    public function hapus($id){
+        $user = UserModel::find($id);
+        $user->delete();
+
         return redirect('/user');
     }
 }
