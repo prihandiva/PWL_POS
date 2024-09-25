@@ -10,7 +10,7 @@
          <a href="/user">Kembali</a>
          <br>
          <br>
-        <form method="post" action="/user/ubah_simpan/{{$data->user_id}}">
+        <form method="post" action="PWL_POS/public/user/ubah_simpan/{{$data->user_id}}"> {{--//perbaikan error--}}
         
             {{csrf_field()}}
             {{method_field('PUT')}}

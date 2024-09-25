@@ -7,7 +7,7 @@
 
         {{-- Form Tambah Data User --}}
          <h1>Form Tambah Data User</h1>
-        <form method="post" action="/user/tambah_simpan">
+        <form method="post" action="PWL_POS/public/user/tambah_simpan"> {{--//perbaikan error--}}
         
             {{csrf_field()}}
 

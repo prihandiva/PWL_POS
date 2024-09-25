@@ -86,7 +86,7 @@ class UserController extends Controller
         return redirect('/user');
     }
     public function ubah($id){
-        $user = UserMOdel::find($id);
+        $user = UserModel::find($id);
         return view('user_ubah',['data'=> $user]);
     }
     public function ubah_simpan($id, Request $request){

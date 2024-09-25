@@ -6,7 +6,7 @@
     <body>
         {{-- //Tampilkan Data user --}}
         <h1>Data user Pengguna</h1>
-        <a href="/user/tambah">+ Tambah User</a>
+        <a href="PWL_POS/public/user/tambah">+ Tambah User</a>{{--//perbaikan error--}}
         <br>
         <table border="1" cellpadding="2" cellspacing="0">
             <tr>
@@ -26,7 +26,7 @@
                 <td>{{ $d->level_id}}</td>
                 <td>{{ $d->level->level_kode}}</td>
                 <td>{{ $d->level->level_nama}}</td>
-                <td><a href="/user/ubah/{{$d->user_id}}">Ubah || </a><a href="/user/hapus/{{$d->user_id}}">Hapus</a></td>
+                <td><a href="PWL_POS/public/user/ubah/{{$d->user_id}}">Ubah || </a><a href="PWL_POS/public/user/hapus/{{$d->user_id}}">Hapus</a></td>{{--//perbaikan error--}}
             </tr>
            @endforeach
         </table> 
