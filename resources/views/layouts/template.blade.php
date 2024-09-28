@@ -18,7 +18,7 @@
 <div class="wrapper">
 
   <!-- navbar -->
-    @include('layout.header')
+    @include('layouts.header')
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
@@ -29,10 +29,10 @@
       <span class="brand-text font-weight-light">PWL - Starter Code</span>{{--MODIF--}}
     </a>
    
-
+    @include('layouts.sidebar')
     <!-- /.sidebar -->
   </aside>
-  @include('layouts.sidebar')
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -71,7 +71,7 @@
   </div>
   <!-- /.content-wrapper -->
 
-  @include('layouts.foote0r')
+  @include('layouts.footer')
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
