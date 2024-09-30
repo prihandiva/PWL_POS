@@ -8,7 +8,15 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class BarangModel extends Model
 {
-    public function kategori(): BelongsTo{
-        return $this->belongsTo(KategoriModel::class,'kategori_id','kategori_id');
+    use HasFactory;
+
+    protected $table = 'm_barang';
+    protected $primaryKey = 'barang_id'; 
+    protected $fillable = ['fk_kategori_id', 'barang_kode', 'barang_nama','harga_jual', 'harga_beli'];
+
+    public function kategori(): BelongsTo
+    {
+        return $this->belongsTo(KategoriModel::class,'fk_kategori_id','kategori_id');
     }
+
 }
