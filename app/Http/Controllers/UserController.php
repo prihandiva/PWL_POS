@@ -124,16 +124,17 @@ public function list(Request $request)
 }
 
 // Menampilkan halaman form edit user ajax
-public function edit_ajax(string $id)
-{
+
+public function edit_ajax(string $id) {
     $user = UserModel::find($id);
     $level = LevelModel::select('level_id', 'level_nama')->get();
 
     return view('user.edit_ajax', ['user' => $user, 'level' => $level]);
 }
 
-public function update_ajax(Request $request, $id) {
-    // cek apakah request dari ajax
+public function update_ajax(Request $request, $id)
+{
+    // Cek apakah request dari AJAX
     if ($request->ajax() || $request->wantsJson()) {
         $rules = [
             'level_id' => 'required|integer',
@@ -141,29 +142,24 @@ public function update_ajax(Request $request, $id) {
             'nama' => 'required|max:100',
             'password' => 'nullable|min:6|max:20'
         ];
-        
-        // use Illuminate\Support\Facades\Validator;
+
+        // Gunakan Illuminate\Support\Facades\Validator
         $validator = Validator::make($request->all(), $rules);
-        
+
         if ($validator->fails()) {
             return response()->json([
-                'status' => false, // respon json, true: berhasil, false: gagal
+                'status' => false, // Respon JSON, true: berhasil, false: gagal
                 'message' => 'Validasi gagal.',
-                'msgField' => $validator->errors() // menunjukkan field mana yang error
+                'msgField' => $validator->errors() // Menunjukkan field mana yang error
             ]);
         }
-        
+
         $check = UserModel::find($id);
-        
         if ($check) {
-            // jika password tidak diisi, maka hapus dari request
-            if (!$request->filled('password')) {
+            if (!$request->filled('password')) { // Jika password tidak diisi, maka hapus dari request
                 $request->request->remove('password');
             }
-            
-            // Update data
             $check->update($request->all());
-            
             return response()->json([
                 'status' => true,
                 'message' => 'Data berhasil diupdate'
@@ -175,13 +171,8 @@ public function update_ajax(Request $request, $id) {
             ]);
         }
     }
-
+    
     return redirect('/');
-}
-
-public function confirm_ajax(string $id) {
-    $user = UserModel::find($id);
-    return view('user.confirm_ajax', ['user' => $user]);
 }
 public function delete_ajax(Request $request, $id)
 {

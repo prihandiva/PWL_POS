@@ -1,159 +1,311 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
 use App\Models\SupplierModel;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Facades\Validator;
 
 class SupplierController extends Controller
 {
+    // Display the list of suppliers
     public function index()
     {
-        $breadcrumb = (object) [
+        $breadcrumb = (object)[
             'title' => 'Daftar Supplier',
-            'list' => ['Home', 'Supplier']
+            'list'  => ['Home', 'Supplier']
         ];
 
         $page = (object) [
             'title' => 'Daftar supplier yang terdaftar dalam sistem'
         ];
 
-        $activeMenu = 'supplier'; // set menu yang sedang aktif
-        $supplier = SupplierModel::all();
+        $activeMenu = 'supplier';
+
         return view('supplier.index', [
-            'breadcrumb' => $breadcrumb, 
-            'page' => $page, 
-            'supplier' => $supplier,
-            'activeMenu' => $activeMenu]);
+            'breadcrumb' => $breadcrumb,
+            'page' => $page,
+            'activeMenu' => $activeMenu
+        ]);
     }
+
+    // Fetch supplier data for DataTables
     public function list(Request $request)
     {
-        $supplier = SupplierModel::select('supplier_id', 'supplier_kode', 'supplier_nama', 'supplier_alamat');
+        $suppliers = SupplierModel::select('supplier_id', 'supplier_kode', 'supplier_nama');
 
-        return DataTables::of($supplier)
+        return DataTables::of($suppliers)
             ->addIndexColumn()
-            ->addColumn('aksi', function ($supplier) { // menambahkan kolom aksi
-                $btn = '<a href="' . url('/supplier/' . $supplier->supplier_id) . '" class="btn btn-info btn-sm">Detail</a>';
-                $btn .= '<a href="' . url('/supplier/' . $supplier->supplier_id . '/edit') . '" class="btn btn-warning btn-sm">Edit</a>';
-                $btn .= '<form class="d-inline-block" method="POST" action="' . url('/supplier/' . $supplier->supplier_id) . '">
-                            ' . csrf_field() . '
-                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm(\'Apakah Anda yakin menghapus data ini?\');">Hapus</button>
-                        </form>';
+            ->addColumn('aksi', function ($supplier) {
+                $btn = '<a href="' . url('/supplier/' . $supplier->supplier_id) . '" class="btn btn-info btn-sm">Detail</a> ';
+                $btn .= '<a href="' . url('/supplier/' . $supplier->supplier_id . '/edit') . '" class="btn btn-warning btn-sm">Edit</a> ';
+                $btn .= '<form class="d-inline-block" method="POST" action="' . url('/supplier/' . $supplier->supplier_id) . '">'
+                    . csrf_field() . method_field('DELETE') .
+                    '<button type="submit" class="btn btn-danger btn-sm" onclick="return confirm(\'Apakah Anda yakin menghapus data ini?\');">Hapus</button></form>';
                 return $btn;
             })
-            ->rawColumns(['aksi']) 
+            ->rawColumns(['aksi'])
             ->make(true);
     }
+
+    // Show the form to add a new supplier
     public function create()
     {
         $breadcrumb = (object) [
-            'title' => 'Tambah supplier',
-            'list' => ['Home', 'Supplier', 'Tambah']
+            'title' => 'Tambah Supplier',
+            'list'  => ['Home', 'Supplier', 'Tambah']
         ];
 
         $page = (object) [
             'title' => 'Tambah supplier baru'
         ];
 
-        $supplier = SupplierModel::all(); 
-        $activeMenu = 'supplier'; 
+        $activeMenu = 'supplier';
 
         return view('supplier.create', [
-            'breadcrumb' => $breadcrumb, 
-            'page' => $page, 
-            'supplier' => $supplier, 
-            'activeMenu' => $activeMenu]);
+            'breadcrumb' => $breadcrumb,
+            'page' => $page,
+            'activeMenu' => $activeMenu
+        ]);
     }
+
+    // Store a new supplier
     public function store(Request $request)
     {
         $request->validate([
-            'supplier_kode' => 'required|string|max:10|unique:m_supplier,supplier_kode',
-            'supplier_nama' => 'required|string|max:100',
-            'supplier_alamat' => 'required|string|max:255',
+            'supplier_kode' => 'required|string|min:3|unique:m_supplier,supplier_kode',
+            'supplier_nama' => 'required|string|max:255'
         ]);
+
         SupplierModel::create([
             'supplier_kode' => $request->supplier_kode,
             'supplier_nama' => $request->supplier_nama,
-            'supplier_alamat' => $request->supplier_alamat
-            
         ]);
+
         return redirect('/supplier')->with('success', 'Data supplier berhasil disimpan');
     }
-    
-    public function show(string $id)
+
+    // Show the details of a specific supplier
+    public function show(int $supplier_id)
     {
-        $supplier = SupplierModel::find($id);
+        $supplier = SupplierModel::find($supplier_id);
+
+        if (!$supplier) {
+            return redirect('/supplier')->with('error', 'Data supplier tidak ditemukan');
+        }
 
         $breadcrumb = (object) [
-            'title' => 'Detail supplier',
-            'list' => ['Home', 'supplier', 'Detail']
+            'title' => 'Detail Supplier',
+            'list'  => ['Home', 'Supplier', 'Detail']
         ];
 
         $page = (object) [
             'title' => 'Detail supplier'
         ];
 
-        $activeMenu = 'supplier'; // set menu yang sedang aktif
+        $activeMenu = 'supplier';
 
-        return view('supplier.show', ['breadcrumb' => $breadcrumb, 'page' => $page, 'supplier' => $supplier, 'activeMenu' => $activeMenu]);
+        return view('supplier.show', [
+            'breadcrumb' => $breadcrumb,
+            'page' => $page,
+            'supplier' => $supplier,
+            'activeMenu' => $activeMenu
+        ]);
     }
 
-    // Menampilkan halaman form edit supplier
-    public function edit(string $id)
+    // Show the form to edit a supplier
+    public function edit(int $supplier_id)
     {
-        $supplier = SupplierModel::find($id);
+        $supplier = SupplierModel::find($supplier_id);
+
+        if (!$supplier) {
+            return redirect('/supplier')->with('error', 'Data supplier tidak ditemukan');
+        }
 
         $breadcrumb = (object) [
-            'title' => 'Edit supplier',
-            'list' => ['Home', 'Supplier', 'Edit']
+            'title' => 'Edit Supplier',
+            'list'  => ['Home', 'Supplier', 'Edit']
         ];
 
         $page = (object) [
             'title' => 'Edit supplier'
         ];
 
-        $activeMenu = 'supplier'; // set menu yang sedang aktif
+        $activeMenu = 'supplier';
 
-        return view('supplier.edit', ['breadcrumb' => $breadcrumb, 'page' => $page, 'supplier' => $supplier, 'activeMenu' => $activeMenu]);
+        return view('supplier.edit', [
+            'breadcrumb' => $breadcrumb,
+            'page' => $page,
+            'supplier' => $supplier,
+            'activeMenu' => $activeMenu
+        ]);
     }
 
-    // Menyimpan perubahan data supplier
-    public function update(Request $request, string $id)
+    // Update the supplier data
+    public function update(Request $request, int $supplier_id)
     {
         $request->validate([
-            'supplier_kode' => 'required|string|max:10',
-            'supplier_nama' => 'required|string|max:100',
-            'supplier_alamat' => 'required|string|max:255',
+            'supplier_kode' => 'required|string|min:3|unique:m_supplier,supplier_kode,' . $supplier_id . ',supplier_id',
+            'supplier_nama' => 'required|string|max:255'
         ]);
 
-        SupplierModel::find($id)->update([
+        $supplier = SupplierModel::find($supplier_id);
+
+        if (!$supplier) {
+            return redirect('/supplier')->with('error', 'Data supplier tidak ditemukan');
+        }
+
+        $supplier->update([
             'supplier_kode' => $request->supplier_kode,
             'supplier_nama' => $request->supplier_nama,
-            'supplier_alamat' => $request->supplier_alamat,
-            
         ]);
 
         return redirect('/supplier')->with('success', 'Data supplier berhasil diubah');
     }
-    
-   
-    public function destroy(string $id)
-    {
-        $check = SupplierModel::find($id);
 
-        if (!$check) {
-            // untuk mengecek apakah data supplier dengan id yang dimaksud ada atau tidak
+    // Delete a supplier
+    public function destroy(int $supplier_id)
+    {
+        $supplier = SupplierModel::find($supplier_id);
+
+        if (!$supplier) {
             return redirect('/supplier')->with('error', 'Data supplier tidak ditemukan');
         }
 
         try {
-            SupplierModel::destroy($id); // Hapus data supplier
-
+            $supplier->delete();
             return redirect('/supplier')->with('success', 'Data supplier berhasil dihapus');
         } catch (\Illuminate\Database\QueryException $e) {
-            // Jika terjadi error ketika menghapus data, redirect kembali ke halaman dengan membawa pesan error
-            return redirect('/supplier')->with('error', 'Data supplier gagal dihapus karena masih terdapat tabel lain yang terkait dengan data ini');
+            return redirect('/supplier')->with('error', 'Data supplier gagal dihapus karena terkait dengan data lain');
         }
+    }
+
+    //--------------------------- AJAX ------------------------------------------------
+
+    // Menampilkan halaman form tambah supplier ajax
+    public function create_ajax()
+    {
+        return view('supplier.create_ajax');
+    }
+
+    // Menyimpan data supplier menggunakan AJAX
+    public function store_ajax(Request $request)
+    {
+        if ($request->ajax() || $request->wantsJson()) {
+            $rules = [
+                'supplier_kode' => 'required|string|min:3|unique:m_supplier,supplier_kode',
+                'supplier_nama' => 'required|string|max:100',
+            ];
+
+            $validator = Validator::make($request->all(), $rules);
+
+            if ($validator->fails()) {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'Validasi Gagal',
+                    'msgField' => $validator->errors(),
+                ]);
+            }
+
+            SupplierModel::create($request->all());
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Data supplier berhasil disimpan',
+            ]);
+        }
+
+        return redirect('/');
+    }
+
+    // Menampilkan halaman form edit supplier ajax
+    public function edit_ajax($id)
+    {
+        $supplier = SupplierModel::find($id);
+
+        if (!$supplier) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Data tidak ditemukan.'
+            ]);
+        }
+
+        return view('supplier.edit_ajax', ['supplier' => $supplier]);
+    }
+
+    // Memperbarui data supplier menggunakan AJAX
+    public function update_ajax(Request $request, $id)
+    {
+        if ($request->ajax() || $request->wantsJson()) {
+            $rules = [
+                'supplier_kode' => 'required|string|min:3|unique:m_supplier,supplier_kode,' . $id . ',supplier_id',
+                'supplier_nama' => 'required|string|max:100',
+            ];
+
+            $validator = Validator::make($request->all(), $rules);
+
+            if ($validator->fails()) {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'Validasi gagal.',
+                    'msgField' => $validator->errors(),
+                ]);
+            }
+
+            $supplier = SupplierModel::find($id);
+            if ($supplier) {
+                $supplier->update($request->all());
+                return response()->json([
+                    'status' => true,
+                    'message' => 'Data berhasil diupdate'
+                ]);
+            } else {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'Data tidak ditemukan'
+                ]);
+            }
+        }
+
+        return redirect('/');
+    }
+
+    // Menampilkan konfirmasi hapus supplier ajax
+    public function confirm_ajax($id)
+    {
+        $supplier = SupplierModel::find($id);
+
+        if (!$supplier) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Supplier tidak ditemukan.'
+            ]);
+        }
+
+        return view('supplier.confirm_ajax', ['supplier' => $supplier]);
+    }
+
+    // Menghapus data supplier menggunakan AJAX
+    public function delete_ajax(Request $request, $id)
+    {
+        if ($request->ajax() || $request->wantsJson()) {
+            $supplier = SupplierModel::find($id);
+
+            if ($supplier) {
+                $supplier->delete();
+                return response()->json([
+                    'status' => true,
+                    'message' => 'Data berhasil dihapus',
+                ]);
+            } else {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'Data tidak ditemukan',
+                ]);
+            }
+        }
+
+        return redirect('/');
     }
 }
