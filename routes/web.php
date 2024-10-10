@@ -32,7 +32,7 @@ use App\Http\Controllers\AuthController;
 // Route::put('/user/ubah_simpan/{id}',[UserController::class,'ubah_simpan']);
 // Route::get('/user/hapus/{id}',[UserController::class,'hapus']);
 
-Route::get('/',[WelcomeController::class,'index']);
+Route::get('/', [WelcomeController::class, 'index']);
 Route::group(['prefix' => 'user'], function () {
     Route::get('/', [UserController::class, 'index']);
     Route::post('/list', [UserController::class, 'list']);
@@ -112,14 +112,30 @@ Route::group(['prefix' => 'barang'], function () {
     Route::get('/{id}/delete_ajax', [BarangController::class, 'confirm_ajax']); // Untuk menampilkan form confirm delete Barang Ajax
     Route::delete('/{id}/delete_ajax', [BarangController::class, 'delete_ajax']); // Untuk menghapus data Barang Ajax
 });
-Route::pattern('id','[0-9]+'); // artinya ketika ada parameter {id}, maka harus berupa angka
+Route::pattern('id', '[0-9]+'); // artinya ketika ada parameter {id}, maka harus berupa angka
 
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('login', [AuthController::class, 'postlogin']);
 Route::get('logout', [AuthController::class, 'logout'])->middleware('auth');
 
-Route::middleware(['auth'])->group(function(){ 
+Route::middleware(['auth'])->group(function () {
     // artinya semua route di dalam group ini harus login dulu
-    
+
     // masukkan semua route yang perlu autentikasi di sini
+});
+Route::middleware(['auth'])->group(function () {
+    // artinya semua route di dalam group ini harus login dulu
+    Route::get('/', [WelcomeController::class, 'index']);
+
+    // route Level
+    // artinya semua route di dalam group ini harus punya role ADM (Administrator)
+    Route::middleware(['authorize:ADM'])->group(function () {
+        Route::get('/level', [LevelController::class, 'index']);
+        Route::post('/level/list', [LevelController::class, 'list']); // untuk list json datatables
+        Route::get('/level/create', [LevelController::class, 'create']);
+        Route::post('/level', [LevelController::class, 'store']);
+        Route::get('/level/{id}/edit', [LevelController::class, 'edit']); // untuk tampilkan form edit
+        Route::put('/level/{id}', [LevelController::class, 'update']); // untuk proses update data
+        Route::delete('/level/{id}', [LevelController::class, 'destroy']); // untuk proses hapus data
+    });
 });
