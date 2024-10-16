@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 25, 2024 at 06:39 AM
+-- Generation Time: Oct 16, 2024 at 05:04 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -205,7 +205,10 @@ INSERT INTO `m_user` (`user_id`, `level_id`, `username`, `nama`, `password`, `cr
 (5, 2, 'manager22', 'Manager Dua Dua', '$2y$12$iFy3VJQO6y9vOmezN.di2eLNceCI/miQ.QYKfIOUhM9/I9kGKKbZG', '2024-09-19 03:32:46', '2024-09-19 03:32:46'),
 (6, 2, 'manager33', 'Manager Tuga Tiga', '$2y$12$slfZbcxSy63UVXDOMEKDuOpEkKRfLyre.T3.wSusCKJy6vnGVwYKK', '2024-09-19 03:48:02', '2024-09-19 03:48:02'),
 (7, 2, 'manager56', 'Manager55', '$2y$12$Ds2xW5bvUhY6IJHUf0VvmOhxUqyL/zrpO8qqXETRWc9wWlO9/wpum', '2024-09-20 04:18:46', '2024-09-20 04:18:46'),
-(8, 2, 'manager12', 'Manager11', '$2y$12$xwVMWd0/IjIVT9mVdpB/D.SH1rqEcdh1P4SQhKXGP373zWRpXx2vW', '2024-09-20 04:27:47', '2024-09-20 04:27:47');
+(8, 2, 'manager12', 'Manager11', '$2y$12$xwVMWd0/IjIVT9mVdpB/D.SH1rqEcdh1P4SQhKXGP373zWRpXx2vW', '2024-09-20 04:27:47', '2024-09-20 04:27:47'),
+(10, 2, 'fitria', 'ramadhani prihandiva', '$2y$12$ZTpGF4vKl9nPS9qIcqegZuTvDFM15D1AVDL6g.G/kUpZoXeqpI9Me', '2024-09-25 00:02:20', '2024-09-25 00:02:20'),
+(12, 3, 'swift', 'taylor swift', '$2y$12$nyIg0l8wjPkiZAIgSWATFejLrnKsdlYaEVsuyTREXGdDo2pgMGvT2', '2024-10-01 05:05:40', '2024-10-01 05:05:40'),
+(13, 2, 'dipi', 'diva', '$2y$12$3fK8924XHRXahggqMKZ7T.Xub5Kqhrz/XODFvBEf5uVuJ/tnAnr6O', '2024-10-15 10:41:11', '2024-10-15 10:41:11');
 
 -- --------------------------------------------------------
 
@@ -521,7 +524,7 @@ ALTER TABLE `m_supplier`
 -- AUTO_INCREMENT for table `m_user`
 --
 ALTER TABLE `m_user`
-  MODIFY `user_id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
