@@ -22,7 +22,8 @@ class BarangModel extends Model
     // Define any relationships
     public function kategori()
     {
-        return $this->belongsTo(KategoriModel::class, 'kategori_id', 'kategori_id');
+        return $this->belongsTo(KategoriModel::class, 'kategori_id', 
+        'kategori_id');
     }
 
     public $timestamps = false;

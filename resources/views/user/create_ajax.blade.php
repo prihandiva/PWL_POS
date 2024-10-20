@@ -50,7 +50,7 @@
 
 <script>
 $(document).ready(function () {
-    $('#formAdd').validate({
+    $('#form-tambah').validate({
         rules: {
             name: {
                 required: true
