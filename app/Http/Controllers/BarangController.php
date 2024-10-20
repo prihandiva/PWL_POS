@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Validator;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use Yajra\DataTables\Facades\DataTables;
 use Barryvdh\DomPDF\Facade\Pdf;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 
 
 class BarangController extends Controller
@@ -388,7 +390,7 @@ class BarangController extends Controller
         }
         
         $sheet->setTitle('Data Barang'); // set title sheet
-        $writer = IOFactory::createWriter($spreadsheet, 'xlsx');
+        $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
         $filename = 'Data Barang ' . date('Y-m-d H:i:s') . '.xlsx';
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         header('Content-Disposition: attachment;filename="' . $filename . '"');
@@ -401,21 +403,22 @@ class BarangController extends Controller
         $writer->save('php://output');
         exit;
     } // end function export_excel
-    // public function export_pdf() {
-    //     set_time_limit(600);
-    //     $barang = BarangModel::select('kategori_id', 'barang_kode', 'barang_nama', 'harga_beli', 'harga_jual')
-    //                                                                                             ->orderBy('kategori_id')
-    //                                                                                             ->orderBy('barang_kode')
-    //                                                                                             ->with('kategori')
-    //                                                                                             ->get();
+
+    public function export_pdf() {
+        set_time_limit(600);
+        $barang = BarangModel::select('kategori_id', 'barang_kode', 'barang_nama', 'harga_beli', 'harga_jual')
+                                                                                                ->orderBy('kategori_id')
+                                                                                                ->orderBy('barang_kode')
+                                                                                                ->with('kategori')
+                                                                                                ->get();
     
-    //     // use Barryvdh\DomPDF\Facade\Pdf;
-    //     $pdf = Pdf::loadView('barang.export_pdf', ['barang' => $barang]);
+        // use Barryvdh\DomPDF\Facade\Pdf;
+        $pdf = Pdf::loadView('barang.export_pdf', ['barang' => $barang]);
     
-    //     $pdf->setPaper('a4', 'portrait'); // set ukuran kertas dan orientasi
-    //     $pdf->setOption("isRemoteEnabled", true); // set true jika ada gambar dari uri
-    //     $pdf->render();
+        $pdf->setPaper('a4', 'portrait'); // set ukuran kertas dan orientasi
+        $pdf->setOption("isRemoteEnabled", true); // set true jika ada gambar dari uri
+        $pdf->render();
     
-    //     return $pdf->stream('Data Barang '.date('Y-m-d H:i:s').'.pdf');
-    // }    
+        return $pdf->stream('Data Barang '.date('Y-m-d H:i:s').'.pdf');
+    }    
 }
