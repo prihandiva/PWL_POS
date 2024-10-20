@@ -34,6 +34,10 @@
                     <th>Password</th>
                     <td>********</td>
                 </tr>
+                <tr>
+                    <th>Foto Profile</th>
+                    <td>{{$user->foto}}</td>
+                </tr>
             </table>
         @endempty
 

@@ -30,7 +30,7 @@ class UserController extends Controller
     // Ambil data user dalam bentuk json untuk datatables
     public function list(Request $request)
     {
-        $users = UserModel::select('user_id', 'username', 'nama', 'level_id')
+        $users = UserModel::select('user_id', 'username', 'nama', 'level_id','foto')
             ->with('level');
 
          // Filter data user berdasarkan level_id
@@ -84,7 +84,9 @@ class UserController extends Controller
             // password harus diisi dan minimal 5 karakter
             'password' => 'required|min:5',
             // level_id harus diisi dan berupa angka
-            'level_id' => 'required|integer'
+            'level_id' => 'required|integer',
+            //foto disimpapn berubah text
+            'foto' => 'text'
         ]);
         UserModel::create([
             'username' => $request->username,
@@ -216,7 +218,8 @@ public function update_ajax(Request $request, $id)
             'level_id' => 'required|integer',
             'username' => 'required|max:20|unique:m_user,username,' .$id. ',user_id',
             'nama' => 'required|max:100',
-            'password' => 'nullable|min:6|max:20'
+            'password' => 'nullable|min:6|max:20',
+            'foto' => 'nullable\text'
         ];
         // use Illuminate\Support\Facades\Validation;
         $validator = Validator::make($request->all(), $rules);

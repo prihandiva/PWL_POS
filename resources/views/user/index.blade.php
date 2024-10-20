@@ -40,6 +40,7 @@
                     <th>Username</th>
                     <th>Nama</th>
                     <th>Level</th>
+                    <th>Foto Profile</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -110,6 +111,13 @@
             orderable: false,
             searchable: false
         }, {
+            data : "foto",
+            className : "",
+            width : "16%",
+            orderable : false,
+            searchable:false
+        },
+        {
             data: "aksi",
             className: "",
             orderable: false,
