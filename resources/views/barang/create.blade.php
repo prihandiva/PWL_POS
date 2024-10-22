@@ -28,8 +28,8 @@
             <div class="form-group row">
                 <label class="col-1 control-label col-form-label">Kode</label>
                 <div class="col-11">
-                    <input type="text" class="form-control" id="barang_kode" name="barang_kode" value="{{ old('barang_kode') }}" required>
-                    @error('barang_kode')
+                    <input type="text" class="form-control" id="menu_kode" name="menu_kode" value="{{ old('menu_kode') }}" required>
+                    @error('menu_kode')
                         <small class="form-text text-danger">{{ $message }}</small>
                     @enderror
                 </div>
@@ -38,8 +38,8 @@
             <div class="form-group row">
                 <label class="col-1 control-label col-form-label">Nama</label>
                 <div class="col-11">
-                    <input type="text" class="form-control" id="barang_nama" name="barang_nama" value="{{ old('barang_nama') }}" required>
-                    @error('barang_nama')
+                    <input type="text" class="form-control" id="menu_nama" name="menu_nama" value="{{ old('menu_nama') }}" required>
+                    @error('menu_nama')
                         <small class="form-text text-danger">{{ $message }}</small>
                     @enderror
                 </div>

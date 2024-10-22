@@ -35,8 +35,8 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{url('/')}}" class="brand-link"> {{--MODIF--}}
-      <img src="{{ asset('adminlte/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">{{--MODIF--}}
-      <span class="brand-text font-weight-light">PWL - Starter Code</span>{{--MODIF--}}
+      <img src="{{ asset('adminlte/dist/img/logo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">{{--MODIF--}}
+      <span class="brand-text font-weight-light">WEBSS KITCHEN</span>{{--MODIF--}}
     </a>
     @include('layouts.sidebar')
     <!-- /.sidebar -->

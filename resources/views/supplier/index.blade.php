@@ -93,14 +93,14 @@
                     orderable: false,
                     searchable: false
                 },{
-                    data: "barang_kode",
+                    data: "menu_kode",
                     className: "",
                     // orderable: true, jika ingin kolom ini bisa diurutkan
                     orderable: true,
                     // searchable: true, jika ingin kolom ini bisa dicari
                     searchable: true
                 }, {
-                    data: "barang_nama",
+                    data: "menu_nama",
                     className: "",
                     // orderable: true, jika ingin kolom ini bisa diurutkan
                     orderable: true,

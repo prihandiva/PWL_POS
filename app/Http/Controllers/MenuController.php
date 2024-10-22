@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 // use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
-use App\Models\BarangModel;
+use App\Models\MenuModel;
 use App\Models\KategoriModel;
 use App\Models\LevelModel;
 use Illuminate\Support\Facades\Validator;
@@ -15,7 +15,7 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 
 
-class BarangController extends Controller
+class MenuController extends Controller
 {
     
     public function index()
@@ -40,7 +40,7 @@ class BarangController extends Controller
 
     public function list(Request $request)
     {
-        $barangs = BarangModel::select('barang_id', 'barang_kode', 'barang_nama', 'kategori_id', 'harga_jual', 'harga_beli')
+        $barangs = MenuModel::select('barang_id', 'menu_kode', 'menu_nama', 'kategori_id', 'harga_jual', 'harga_beli')
             ->with('kategori');
 
         // Filter data barang berdasarkan kategori_id
@@ -87,17 +87,17 @@ class BarangController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'barang_kode' => 'required|string|max:10|unique:m_barang,barang_kode',
-            'barang_nama' => 'required|string|max:100',
+            'menu_kode' => 'required|string|max:10|unique:m_menu,menu_kode',
+            'menu_nama' => 'required|string|max:100',
             'kategori_id' => 'required|integer',
             'harga_jual' => 'required|integer',
             'harga_beli' => 'required|integer'
 
         ]);
 
-        BarangModel::create([
-            'barang_kode' => $request->barang_kode,
-            'barang_nama' => $request->barang_nama,
+        MenuModel::create([
+            'menu_kode' => $request->menu_kode,
+            'menu_nama' => $request->menu_nama,
             'kategori_id' => $request->kategori_id,
             'harga_jual' => $request->harga_jual,
             'harga_beli' => $request->harga_beli
@@ -107,7 +107,7 @@ class BarangController extends Controller
     
     public function show(string $id)
     {
-        $barang = BarangModel::with('kategori')->find($id);
+        $barang = MenuModel::with('kategori')->find($id);
 
         $breadcrumb = (object) [
             'title' => 'Detail barang',
@@ -126,7 +126,7 @@ class BarangController extends Controller
     // Menampilkan halaman form edit barang
     public function edit(string $id)
     {
-        $barang = BarangModel::find($id);
+        $barang = MenuModel::find($id);
 
         $kategori = KategoriModel::all();
 
@@ -148,22 +148,22 @@ class BarangController extends Controller
     public function update(Request $request, string $id)
 {
     $request->validate([
-        'barang_kode' => 'required|string|max:10',
-        'barang_nama' => 'required|string|max:100',
+        'menu_kode' => 'required|string|max:10',
+        'menu_nama' => 'required|string|max:100',
         'kategori_id' => 'required|integer',
         'harga_jual' => 'required|integer',
         'harga_beli' => 'required|integer'
     ]);
 
     // Update data barang
-    $barang = BarangModel::find($id);
+    $barang = MenuModel::find($id);
     if (!$barang) {
         return redirect('/barang')->with('error', 'Data barang tidak ditemukan');
     }
 
     $barang->update([
-        'barang_kode' => $request->barang_kode,
-        'barang_nama' => $request->barang_nama,
+        'menu_kode' => $request->menu_kode,
+        'menu_nama' => $request->menu_nama,
         'kategori_id' => $request->kategori_id,
         'harga_jual' => $request->harga_jual,
         'harga_beli' => $request->harga_beli
@@ -175,7 +175,7 @@ class BarangController extends Controller
     // Menghapus data barang
     public function destroy(string $id)
     {
-        $check = BarangModel::find($id);
+        $check = MenuModel::find($id);
 
         if (!$check) {
             // untuk mengecek apakah data barang dengan id yang dimaksud ada atau tidak
@@ -183,7 +183,7 @@ class BarangController extends Controller
         }
 
         try {
-            BarangModel::destroy($id); // Hapus data kategori
+            MenuModel::destroy($id); // Hapus data kategori
 
             return redirect('/barang')->with('success', 'Data barang berhasil dihapus');
         } catch (\Illuminate\Database\QueryException $e) {
@@ -203,8 +203,8 @@ class BarangController extends Controller
         if ($request->ajax() || $request->wantsJson()) {
             $rules = [
                 'kategori_id'   => 'required|integer', // Menggunakan kategori_id
-                'barang_kode'      => 'required|string|max:10|unique:m_barang,barang_kode',
-                'barang_nama'      => 'required|string|max:100',
+                'menu_kode'      => 'required|string|max:10|unique:m_menu,menu_kode',
+                'menu_nama'      => 'required|string|max:100',
                 'harga_beli'       => 'required|integer',
                 'harga_jual'       => 'required|integer',
             ];
@@ -216,7 +216,7 @@ class BarangController extends Controller
                     'msgField'  => $validator->errors(),
                 ]);
             }
-            BarangModel::create($request->all());
+            MenuModel::create($request->all());
             return response()->json([
                 'status'    => true,
                 'message'   => 'Data barang berhasil disimpan'
@@ -226,7 +226,7 @@ class BarangController extends Controller
     }
     public function edit_ajax($id)
     {
-    $barang = BarangModel::find($id);
+    $barang = MenuModel::find($id);
     $level = LevelModel::select('level_id', 'level_nama')->get();
     return view('barang.edit_ajax', ['barang' => $barang, 'level' => $level]);
     }
@@ -237,8 +237,8 @@ class BarangController extends Controller
         if ($request->ajax() || $request->wantsJson()) {
             $rules = [
                 'kategori_id'   => 'required|integer', // Menggunakan kategori_id
-                'barang_kode'      => 'required|string|max:10',
-                'barang_nama'      => 'required|string|max:100', 
+                'menu_kode'      => 'required|string|max:10',
+                'menu_nama'      => 'required|string|max:100', 
                 'harga_beli'       => 'required|integer',
                 'harga_jual'       => 'required|integer',
             ];
@@ -250,7 +250,7 @@ class BarangController extends Controller
                     'msgField' => $validator->errors()
                 ]);
             }
-            $check = BarangModel::find($id);
+            $check = MenuModel::find($id);
             if ($check) {
                 $check->update($request->all());
                 return response()->json([
@@ -268,7 +268,7 @@ class BarangController extends Controller
     }
     public function confirm_ajax(string $id)
     {
-        $barang = BarangModel::find($id);
+        $barang = MenuModel::find($id);
         return view('barang.confirm_ajax', ['barang' => $barang]);
     }
 
@@ -276,7 +276,7 @@ class BarangController extends Controller
     {
         // cek apakah request dari ajax
         if ($request->ajax() || $request->wantsJson()) {
-            $barang = BarangModel::find($id);
+            $barang = MenuModel::find($id);
             if ($barang) {
                 $barang->delete();
                 return response()->json([
@@ -326,8 +326,8 @@ class BarangController extends Controller
                     if ($baris > 1) { // baris ke 1 adalah header, maka lewati
                         $insert[$baris] = [
                             'kategori_id' => $value['A'],
-                            'barang_kode' => $value['B'],
-                            'barang_nama' => $value['C'],
+                            'menu_kode' => $value['B'],
+                            'menu_nama' => $value['C'],
                             'harga_beli' => $value['D'],
                             'harga_jual' => $value['E'],
                             'created_at' => now(),
@@ -337,7 +337,7 @@ class BarangController extends Controller
                 //print insert disini kalok misal ada data e pake model php le pake echo 
                 if (count($insert) > 0) {
                     // insert data ke database, jika data sudah ada, maka diabaikan
-                    BarangModel::insertOrIgnore($insert);
+                    MenuModel::insertOrIgnore($insert);
                 }
                 return response()->json([
                     'status' => true,
@@ -359,7 +359,7 @@ class BarangController extends Controller
     public function export_excel()
     {
         // ambil data barang yang akan di export
-        $barang = BarangModel::select('kategori_id', 'barang_kode', 'barang_nama', 'harga_beli', 'harga_jual')
+        $barang = MenuModel::select('kategori_id', 'menu_kode', 'menu_nama', 'harga_beli', 'harga_jual')
             ->orderBy('kategori_id')
             ->with('kategori')
             ->get();
@@ -377,8 +377,8 @@ class BarangController extends Controller
         $baris = 2; // baris data dimulai dari baris ke 2
         foreach ($barang as $key => $value) {
             $sheet->setCellValue('A' . $baris, $no);
-            $sheet->setCellValue('B' . $baris, $value->barang_kode);
-            $sheet->setCellValue('C' . $baris, $value->barang_nama);
+            $sheet->setCellValue('B' . $baris, $value->menu_kode);
+            $sheet->setCellValue('C' . $baris, $value->menu_nama);
             $sheet->setCellValue('D' . $baris, $value->harga_beli);
             $sheet->setCellValue('E' . $baris, $value->harga_jual);
             $sheet->setCellValue('F' . $baris, $value->kategori->kategori_nama); // ambil nama kategori
@@ -406,9 +406,9 @@ class BarangController extends Controller
 
     public function export_pdf() {
         set_time_limit(600);
-        $barang = BarangModel::select('kategori_id', 'barang_kode', 'barang_nama', 'harga_beli', 'harga_jual')
+        $barang = MenuModel::select('kategori_id', 'menu_kode', 'menu_nama', 'harga_beli', 'harga_jual')
                                                                                                 ->orderBy('kategori_id')
-                                                                                                ->orderBy('barang_kode')
+                                                                                                ->orderBy('menu_kode')
                                                                                                 ->with('kategori')
                                                                                                 ->get();
     

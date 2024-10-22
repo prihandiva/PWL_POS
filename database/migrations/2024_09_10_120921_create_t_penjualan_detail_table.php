@@ -21,8 +21,8 @@ return new class extends Migration
 
             //Mendifinisikan FK pada kolom supplier_id mengacu pada kolom supplier_id di tabel m_supplier
             $table->foreign('penjualan_id')->references('penjualan_id')->on('t_penjualan');
-            //Mendifinisikan FK pada kolom barang_id mengacu pada kolom barang_id di tabel m_barang
-            $table->foreign('barang_id')->references('barang_id')->on('m_barang');
+            //Mendifinisikan FK pada kolom barang_id mengacu pada kolom barang_id di tabel m_menu
+            $table->foreign('barang_id')->references('barang_id')->on('m_menu');
         });
     }
 

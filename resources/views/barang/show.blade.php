@@ -24,11 +24,11 @@
                 </tr>
                 <tr>
                     <th>Kode</th>
-                    <td>{{ $barang->barang_kode}}</td>
+                    <td>{{ $barang->menu_kode}}</td>
                 </tr>
                 <tr>
                     <th>Nama</th>
-                    <td>{{ $barang->barang_nama }}</td>
+                    <td>{{ $barang->menu_nama }}</td>
                 </tr>
                 <tr>
                     <th>Harga Jual</th>

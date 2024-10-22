@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('m_barang', function (Blueprint $table) {
+        Schema::create('m_menu', function (Blueprint $table) {
             $table->id('barang_id');
             $table->unsignedBigInteger('kategori_id')->index();//indexing untuk ForeignKey(FK)
-            $table->string('barang_kode',10)->unique();//unique()dibuat agar tidak duplikat
-            $table->string('barang_nama',100);
+            $table->string('menu_kode',10)->unique();//unique()dibuat agar tidak duplikat
+            $table->string('menu_nama',100);
             $table->integer('harga_beli');
             $table->integer('harga_jual');
             $table->timestamps();
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('m_barang');
+        Schema::dropIfExists('m_menu');
     }
 };
