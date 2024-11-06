@@ -69,9 +69,80 @@
             let rupiah = numberString.substr(0, sisa);
             let ribuan = numberString.substr(sisa).match(/\d{3}/g);
 
+<<<<<<< HEAD
             if (ribuan) {
                 let separator = sisa ? '.' : '';
                 rupiah += separator + ribuan.join('.');
+=======
+    var tableBarang;
+    $(document).ready(function() {
+        // Inisialisasi DataTables
+        tableBarang = $('#table-barang').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: {
+                url: "{{ url('barang/list') }}",
+                dataType: "json",
+                type: "POST",
+                data: function(d) {
+                    d.filter_kategori = $('.filter_kategori').val();
+                }
+            },
+            columns: [
+                {
+                    // nomor urut dari laravel datatable addIndexColumn()
+                    data: "DT_RowIndex",
+                    className: "text-center",
+                    orderable: false,
+                    searchable: false
+                },{
+                    data: "menu_kode",
+                    className: "",
+                    // orderable: true, jika ingin kolom ini bisa diurutkan
+                    orderable: true,
+                    // searchable: true, jika ingin kolom ini bisa dicari
+                    searchable: true
+                }, {
+                    data: "menu_nama",
+                    className: "",
+                    // orderable: true, jika ingin kolom ini bisa diurutkan
+                    orderable: true,
+                    // searchable: true, jika ingin kolom ini bisa dicari
+                    searchable: true
+                }, {
+                    data: "harga_jual",
+                    className: "",
+                    // orderable: true, jika ingin kolom ini bisa diurutkan
+                    orderable: true,
+                    // searchable: true, jika ingin kolom ini bisa dicari
+                    searchable: true
+                }, {
+                    data: "harga_beli",
+                    className: "",
+                    // orderable: true, jika ingin kolom ini bisa diurutkan
+                    orderable: true,
+                    // searchable: true, jika ingin kolom ini bisa dicari
+                    searchable: true
+                }, {
+                    // mengambil data level hasil dari ORM berelasi
+                    data: "kategori.kategori_nama",
+                    className: "",
+                    orderable: false,
+                    searchable: false
+                }, {
+                    data: "aksi",
+                    className: "",
+                    orderable: false,
+                    searchable: false
+                } 
+            ]
+        });
+
+        // Pencarian DataTables dengan tombol Enter
+        $('#table-barang_filter input').unbind().bind().on('keyup', function(e) {
+            if (e.keyCode == 13) { // Enter
+                tableBarang.search(this.value).draw();
+>>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
             }
 
             return 'Rp ' + rupiah;

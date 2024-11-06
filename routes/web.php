@@ -7,13 +7,16 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\SupplierController;
-use App\Http\Controllers\BarangController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProfileController;
+<<<<<<< HEAD
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\PenjualanDetailController;
 use App\Http\Controllers\StokController;
+=======
+>>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
 
 
 /*
@@ -143,25 +146,31 @@ Route::middleware(['auth'])->group(function() {
         Route::get('/export_pdf', [SupplierController::class, 'export_pdf']);
     });
     Route::group(['prefix' => 'barang'], function () {
-        Route::get('/', [BarangController::class, 'index']);
-        Route::post('/list', [BarangController::class, 'list']);
-        Route::get('/create', [BarangController::class, 'create']);
-        Route::post('/', [BarangController::class, 'store']);
-        Route::get('/create_ajax', [BarangController::class, 'create_ajax']);
-        Route::post('/ajax', [BarangController::class, 'store_ajax']);
-        Route::get('/{id}', [BarangController::class, 'show']);
-        Route::get('/{id}/edit', [BarangController::class, 'edit']);
-        Route::put('/{id}', [BarangController::class, 'update']);
-        Route::get('/{id}/edit_ajax', [BarangController::class, 'edit_ajax']); // Menampilkan halaman form edit Barang Ajax
-        Route::put('/{id}/update_ajax', [BarangController::class, 'update_ajax']); // Menyimpan perubahan data Barang Ajax
-        Route::post('/{id}', [BarangController::class, 'destroy']);
-        Route::get('/{id}/delete_ajax', [BarangController::class, 'confirm_ajax']); // Untuk menampilkan form confirm delete Barang Ajax
-        Route::delete('/{id}/delete_ajax', [BarangController::class, 'delete_ajax']); // Untuk menghapus data Barang Ajax
-        Route::get('/import', [BarangController::class, 'import']); 
-        Route::post('/import_ajax', [BarangController::class, 'import_ajax']);
-        Route::get('/export_excel', [BarangController::class, 'export_excel']);
-        Route::get('/export_pdf', [BarangController::class, 'export_pdf']);
+        Route::get('/', [MenuController::class, 'index']);
+        Route::post('/list', [MenuController::class, 'list']);
+        Route::get('/create', [MenuController::class, 'create']);
+        Route::post('/', [MenuController::class, 'store']);
+        Route::get('/create_ajax', [MenuController::class, 'create_ajax']);
+        Route::post('/ajax', [MenuController::class, 'store_ajax']);
+        Route::get('/{id}', [MenuController::class, 'show']);
+        Route::get('/{id}/edit', [MenuController::class, 'edit']);
+        Route::put('/{id}', [MenuController::class, 'update']);
+        Route::get('/{id}/edit_ajax', [MenuController::class, 'edit_ajax']); // Menampilkan halaman form edit Barang Ajax
+        Route::put('/{id}/update_ajax', [MenuController::class, 'update_ajax']); // Menyimpan perubahan data Barang Ajax
+        Route::post('/{id}', [MenuController::class, 'destroy']);
+        Route::get('/{id}/delete_ajax', [MenuController::class, 'confirm_ajax']); // Untuk menampilkan form confirm delete Barang Ajax
+        Route::delete('/{id}/delete_ajax', [MenuController::class, 'delete_ajax']); // Untuk menghapus data Barang Ajax
+        Route::get('/import', [MenuController::class, 'import']); 
+        Route::post('/import_ajax', [MenuController::class, 'import_ajax']);
+        Route::get('/export_excel', [MenuController::class, 'export_excel']);
+        Route::get('/export_pdf', [MenuController::class, 'export_pdf']);
     });
+    Route::group(['prefix' => 'profile'], function () {
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+Route::put('/profile/update', [ProfileController::class, 'updateProfile'])->name('profile.update');
+
+    });
+<<<<<<< HEAD
     Route::group(['prefix' => 'profile'], function () {
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
 Route::put('/profile/update', [ProfileController::class, 'updateProfile'])->name('profile.update');
@@ -248,7 +257,19 @@ Route::group(['prefix' => 'profile', 'middleware'=>'authorize:ADM,MNG,STF,CST'],
     Route::put('/{id}/update_ajax', [ProfileController::class, 'update_ajax']);
     Route::get('/{id}/edit_foto', [ProfileController::class, 'edit_foto']);
     Route::put('/{id}/update_foto', [ProfileController::class, 'update_foto']);
+=======
+>>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
 });
+
+//logout
+use Illuminate\Support\Facades\Auth;
+Route::post('/logout', function () {
+    Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+
+    return redirect('/login');
+})->name('logout');
 
 
 

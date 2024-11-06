@@ -59,6 +59,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (5, '2024_09_10_101724_create_m_level_table', 1),
+<<<<<<< HEAD:pwl_uts.sql
 (6, '2024_09_10_103052_create_m_kategori_table', 1),
 (7, '2024_09_10_103108_create_m_supplier_table', 1),
 (8, '2024_09_10_105243_create_m_user_table', 1),
@@ -66,18 +67,27 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (10, '2024_09_10_120836_create_t_penjualan_table', 1),
 (11, '2024_09_10_120907_create_t_stok_table', 1),
 (12, '2024_09_10_120921_create_t_penjualan_detail_table', 1);
+=======
+(6, '2024_09_10_103052_create_m_kategori_table', 2),
+(7, '2024_09_10_103108_create_m_supplier_table', 2),
+(8, '2024_09_10_105243_create_m_user_table', 3),
+(9, '2024_09_10_120810_create_m_menu_table', 4),
+(10, '2024_09_10_120836_create_t_penjualan_table', 4),
+(11, '2024_09_10_120907_create_t_stok_table', 4),
+(12, '2024_09_10_120921_create_t_penjualan_detail_table', 4);
+>>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e:pwl_pos.sql
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `m_barang`
+-- Table structure for table `m_menu`
 --
 
-CREATE TABLE `m_barang` (
+CREATE TABLE `m_menu` (
   `barang_id` bigint UNSIGNED NOT NULL,
   `kategori_id` bigint UNSIGNED NOT NULL,
-  `barang_kode` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `barang_nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `menu_kode` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `menu_nama` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `harga_beli` int NOT NULL,
   `harga_jual` int NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -85,9 +95,10 @@ CREATE TABLE `m_barang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `m_barang`
+-- Dumping data for table `m_menu`
 --
 
+<<<<<<< HEAD:pwl_uts.sql
 INSERT INTO `m_barang` (`barang_id`, `kategori_id`, `barang_kode`, `barang_nama`, `harga_beli`, `harga_jual`, `created_at`, `updated_at`) VALUES
 (101, 1, 'MKN001', 'Nasi Goreng', 15000, 25000, NULL, NULL),
 (102, 1, 'MKN002', 'Rendang Sapi', 30000, 45000, NULL, NULL),
@@ -114,6 +125,24 @@ INSERT INTO `m_barang` (`barang_id`, `kategori_id`, `barang_kode`, `barang_nama`
 (503, 5, 'MSN003', 'Ayam Betutu', 35000, 50000, NULL, NULL),
 (504, 5, 'MSN004', 'Sop Buntut', 40000, 60000, NULL, NULL),
 (505, 5, 'MSN005', 'Rawon', 30000, 45000, NULL, NULL);
+=======
+INSERT INTO `m_menu` (`barang_id`, `kategori_id`, `menu_kode`, `menu_nama`, `harga_beli`, `harga_jual`, `created_at`, `updated_at`) VALUES
+(101, 1, 'ELK001', 'Laptop Acer Aspire', 7000000, 8500000, NULL, NULL),
+(102, 1, 'ELK002', 'Smart TV Samsung', 4000000, 5000000, NULL, NULL),
+(103, 1, 'ELK003', 'Smartphone Xiaomi', 3000000, 3800000, NULL, NULL),
+(104, 1, 'ELK004', 'Headphone Sony', 800000, 1000000, NULL, NULL),
+(105, 1, 'ELK005', 'Kamera Canon EOS', 6000000, 7500000, NULL, NULL),
+(201, 2, 'PAK001', 'Kemeja Batik Pria', 150000, 200000, NULL, NULL),
+(202, 2, 'PAK002', 'Jaket Kulit Wanita', 500000, 650000, NULL, NULL),
+(203, 2, 'PAK003', 'Kaos Polos Katun', 80000, 120000, NULL, NULL),
+(204, 2, 'PAK004', 'Celana Jeans Pria', 180000, 250000, NULL, NULL),
+(205, 2, 'PAK005', 'Rok Mini Denim', 120000, 170000, NULL, NULL),
+(301, 3, 'MNM001', 'Beras Premium 10kg', 90000, 120000, NULL, NULL),
+(302, 3, 'MNM002', 'Minyak Goreng 2L', 25000, 35000, NULL, NULL),
+(303, 3, 'MNM003', 'Gula Pasir 1kg', 12000, 18000, NULL, NULL),
+(304, 3, 'MNM004', 'Tepung Terigu 1kg', 8000, 12000, NULL, NULL),
+(305, 3, 'MNM005', 'Susu Bubuk 500g', 45000, 60000, NULL, NULL);
+>>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e:pwl_pos.sql
 
 -- --------------------------------------------------------
 
@@ -417,12 +446,12 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `m_barang`
+-- Indexes for table `m_menu`
 --
-ALTER TABLE `m_barang`
+ALTER TABLE `m_menu`
   ADD PRIMARY KEY (`barang_id`),
-  ADD UNIQUE KEY `m_barang_barang_kode_unique` (`barang_kode`),
-  ADD KEY `m_barang_kategori_id_index` (`kategori_id`);
+  ADD UNIQUE KEY `m_menu_menu_kode_unique` (`menu_kode`),
+  ADD KEY `m_menu_kategori_id_index` (`kategori_id`);
 
 --
 -- Indexes for table `m_kategori`
@@ -516,10 +545,15 @@ ALTER TABLE `migrations`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `m_barang`
+-- AUTO_INCREMENT for table `m_menu`
 --
+<<<<<<< HEAD:pwl_uts.sql
 ALTER TABLE `m_barang`
   MODIFY `barang_id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=506;
+=======
+ALTER TABLE `m_menu`
+  MODIFY `barang_id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=306;
+>>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e:pwl_pos.sql
 
 --
 -- AUTO_INCREMENT for table `m_kategori`
@@ -580,10 +614,10 @@ ALTER TABLE `users`
 --
 
 --
--- Constraints for table `m_barang`
+-- Constraints for table `m_menu`
 --
-ALTER TABLE `m_barang`
-  ADD CONSTRAINT `m_barang_kategori_id_foreign` FOREIGN KEY (`kategori_id`) REFERENCES `m_kategori` (`kategori_id`);
+ALTER TABLE `m_menu`
+  ADD CONSTRAINT `m_menu_kategori_id_foreign` FOREIGN KEY (`kategori_id`) REFERENCES `m_kategori` (`kategori_id`);
 
 --
 -- Constraints for table `m_user`
@@ -601,14 +635,14 @@ ALTER TABLE `t_penjualan`
 -- Constraints for table `t_penjualan_detail`
 --
 ALTER TABLE `t_penjualan_detail`
-  ADD CONSTRAINT `t_penjualan_detail_barang_id_foreign` FOREIGN KEY (`barang_id`) REFERENCES `m_barang` (`barang_id`),
+  ADD CONSTRAINT `t_penjualan_detail_barang_id_foreign` FOREIGN KEY (`barang_id`) REFERENCES `m_menu` (`barang_id`),
   ADD CONSTRAINT `t_penjualan_detail_penjualan_id_foreign` FOREIGN KEY (`penjualan_id`) REFERENCES `t_penjualan` (`penjualan_id`);
 
 --
 -- Constraints for table `t_stok`
 --
 ALTER TABLE `t_stok`
-  ADD CONSTRAINT `t_stok_barang_id_foreign` FOREIGN KEY (`barang_id`) REFERENCES `m_barang` (`barang_id`),
+  ADD CONSTRAINT `t_stok_barang_id_foreign` FOREIGN KEY (`barang_id`) REFERENCES `m_menu` (`barang_id`),
   ADD CONSTRAINT `t_stok_supplier_id_foreign` FOREIGN KEY (`supplier_id`) REFERENCES `m_supplier` (`supplier_id`),
   ADD CONSTRAINT `t_stok_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `m_user` (`user_id`);
 COMMIT;

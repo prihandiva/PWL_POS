@@ -89,8 +89,8 @@ MALANG</span>
 @foreach($barang as $b)
 <tr>
 <td class="text-center">{{ $loop->iteration }}</td>
-<td>{{ $b->barang_kode }}</td>
-<td>{{ $b->barang_nama }}</td>
+<td>{{ $b->menu_kode }}</td>
+<td>{{ $b->menu_nama }}</td>
 <td class="text-right">{{ number_format($b->harga_beli, 0, ',', '.') }}</td>
 <td class="text-right">{{ number_format($b->harga_jual, 0, ',', '.') }}</td>
 <td>{{ $b->kategori->kategori_nama }}</td>

@@ -19,16 +19,23 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+<<<<<<< HEAD
+=======
+            background-color: #01153E; /* Biru navy */
+>>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
             color: #FFFFFF;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+<<<<<<< HEAD
             background-size: cover;
             background-position: center;
             background-blend-mode: overlay;
             background-image: url('{{ asset('images/background.png') }}');
              
+=======
+>>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
         }
 
         .login-box {
@@ -246,4 +253,8 @@
     </script>
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e

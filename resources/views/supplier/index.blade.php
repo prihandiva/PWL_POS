@@ -67,15 +67,25 @@ data-keyboard="false" data-width="75%" aria-hidden="true"></div>
                     className: "text-center",
                     orderable: false,
                     searchable: false
+<<<<<<< HEAD
                 },
                 {
                     data: "supplier_kode", 
+=======
+                },{
+                    data: "menu_kode",
+>>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
                     className: "",
                     orderable: true, 
                     searchable: true
+<<<<<<< HEAD
                 },
                 {
                     data: "supplier_nama", 
+=======
+                }, {
+                    data: "menu_nama",
+>>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
                     className: "",
                     orderable: true, 
                     searchable: true
