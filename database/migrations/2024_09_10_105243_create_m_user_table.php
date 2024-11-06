@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('username',20)->unique();//unique()dibuat agar tidak duplikat
             $table->string('nama',100);
             $table->string('password');
+            $table->string('user_foto')->nullable();
             $table->timestamps();
 
             //Mendifinisikan FK pada kolom level_id mengacu pad kolom level_id di tabel m_level

@@ -16,15 +16,12 @@ class AuthController extends Controller
         if (Auth::check()) { // jika sudah login, maka redirect ke halaman home
             return redirect('/');
         }
-
         return view('auth.login');
     }
-
     public function postlogin(Request $request)
     {
         if ($request->ajax() || $request->wantsJson()) {
             $credentials = $request->only('username', 'password');
-
             if (Auth::attempt($credentials)) {
                 return response()->json([
                     'status' => true,
@@ -32,25 +29,13 @@ class AuthController extends Controller
                     'redirect' => url('/')
                 ]);
             }
-
             return response()->json([
                 'status' => false,
                 'message' => 'Login Gagal'
             ]);
         }
-
         return redirect('login');
     }
-
-    // public function logout(Request $request)
-    // {
-    //     Auth::logout();
-
-    //     $request->session()->invalidate();
-    //     $request->session()->regenerateToken();
-
-    //     return redirect('login');
-    // }
     public function register()
     {
         $level = LevelModel::select('level_id', 'level_nama')->get();
@@ -87,7 +72,6 @@ class AuthController extends Controller
         // Jika bukan AJAX, arahkan ke halaman login
         return redirect('login')->with('success', 'Registrasi berhasil!');
     }
-    
     public function logout(Request $request)
     {
         Auth::logout();

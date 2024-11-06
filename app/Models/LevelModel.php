@@ -14,7 +14,7 @@ class LevelModel extends Model
     protected $table = 'm_level';
     protected $primaryKey = 'level_id';
 
-    protected $fillable = ['level_name'];
+    protected $fillable = ['level_nama','level_kode'];
     public function user():BelongsTo{
         return $this->belongsTo(UserModel::class);
     }
