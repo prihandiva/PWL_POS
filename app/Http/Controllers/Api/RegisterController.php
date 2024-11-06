@@ -6,6 +6,7 @@ use App\Models\UserModel;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class RegisterController extends Controller
 {
@@ -16,7 +17,8 @@ class RegisterController extends Controller
             'username' => 'required',
             'nama' => 'required',
             'password' => 'required|min:5|confirmed',
-            'level_id' => 'required'
+            'level_id' => 'required',
+            'image' => 'required |image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         // If validation fails
@@ -24,12 +26,17 @@ class RegisterController extends Controller
             return response()->json($validator->errors(), 422);
         }
 
+        $image = $request->file('image');
+
+        $image->storeAs('posts/', $image->hashName());
+      
         // Create user
         $user = UserModel::create([
             'username' => $request->username,
             'nama' => $request->nama,
             'password' => bcrypt($request->password),
             'level_id' => $request->level_id,
+            'image' => $image->hashName(),
         ]);
 
         // Return response JSON if user is created
@@ -44,6 +51,5 @@ class RegisterController extends Controller
         return response()->json([
             'success' => false,
         ], 409);
-
     }
 }

@@ -45,7 +45,7 @@
                         </table>
                     </div>
                     <div class="mt-3 text-center">
-                        <button onclick="modalAction('{{ url('/profile/' . session('user_id') . '/edit_ajax') }}')"
+                        <button onclick="modalAction('{{ url('public/storage/images/profile/' . session('user_id') . '/edit_ajax') }}')"
                             class="btn btn-primary profile-button">Edit Profile</button>
                     </div>
                 </div>

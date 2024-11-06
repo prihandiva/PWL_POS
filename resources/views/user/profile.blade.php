@@ -36,8 +36,8 @@
             <tr>
                 <th>Foto Profil</th>
                 <td>
-                    @if($user->user_foto)
-                        <img src="{{ asset('images/profile/' . $user->user_foto) }}" alt="Foto Profil" width="150px">
+                    @if($user->image)
+                        <img src="{{ url($user->image) }}" alt="Foto Profil" width="150px">
                     @else
                         <p>Foto belum tersedia</p>
                     @endif

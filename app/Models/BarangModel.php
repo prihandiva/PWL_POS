@@ -5,7 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-
+use Tymon\JWTAuth\Contracts\JWTSubject;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles; // Import trait HasRoles
 class BarangModel extends Model
 {
     use HasFactory;
@@ -31,5 +34,11 @@ class BarangModel extends Model
         return $this->belongsTo(KategoriModel::class, 'kategori_id', 'kategori_id');
     }
 
+    protected function image(): Attribute
+    {
+        return Attribute::make(
+            get: fn($image) => url('/storage/posts/' . $image),
+        );
+    }
     // Tambahkan metode atau logika lain yang diperlukan untuk model ini
 }
