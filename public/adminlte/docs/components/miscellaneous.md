@@ -23,15 +23,15 @@ You can change the font sizes with adding to any element `.text-*` e.g. (`.text-
 
 ### Dropdown Menu Large
 
-You can add the `.dropdown-menu-lg` to `.dropdown-menu` for a bigger dropdown menu.
+You can add the `.dropdown-barang-lg` to `.dropdown-barang` for a bigger dropdown barang.
 
 
 ### Dropdown Hover
 
 You can add the `.dropdown-hover` class beside this classes:
-- `.dropdown` (to use hover for the whole dropdown menu)
-- `.dropdown-menu` (to use hover on a specific menu item & sub menus)
-- `.dropdown-submenu` (to use hover on a specific sub menu item & sub sub menus)
+- `.dropdown` (to use hover for the whole dropdown barang)
+- `.dropdown-barang` (to use hover on a specific barang item & sub menus)
+- `.dropdown-submenu` (to use hover on a specific sub barang item & sub sub menus)
 
 ### Form Control Bottom Border Only
 

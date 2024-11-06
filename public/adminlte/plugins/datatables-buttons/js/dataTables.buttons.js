@@ -1276,7 +1276,7 @@ $.extend( Buttons.prototype, {
 
 		content = $(content)
 			.addClass(options.contentClassName)
-			.attr('role', 'menu')
+			.attr('role', 'barang')
 			.appendTo(display);
 
 		hostNode.attr( 'aria-expanded', 'true' );

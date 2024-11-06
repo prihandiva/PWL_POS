@@ -15,7 +15,7 @@
       </div>
     </div>
     <nav class="mt-2">
-      <ul class="nav nav-pills nav-sidebar nav-child-indent flex-column" data-widget="treeview" role="menu">
+      <ul class="nav nav-pills nav-sidebar nav-child-indent flex-column" data-widget="treeview" role="barang">
        {% for item in site.navigation -%}
           {%- assign subitem_active = 'false' -%}
           {%- for subitem in item.subitems -%}
@@ -25,7 +25,7 @@
             {%- endif -%}
           {%- endfor %}
 
-          <li class="nav-item{% if subitem_active == 'true' %} menu-open{% endif %}">
+          <li class="nav-item{% if subitem_active == 'true' %} barang-open{% endif %}">
             {% if item.url == 'index.html' -%}
               {%- assign item_url = '/' -%}
             {%- else -%}

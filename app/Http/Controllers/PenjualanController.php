@@ -59,7 +59,7 @@ class PenjualanController extends Controller
         $penjualan = PenjualanModel::with('user')->find($id);
         $breadcrumb = (object) ['title' => 'Detail Penjualan', 'list' => ['Home', 'Penjualan', 'Detail']];
         $page = (object) ['title' => 'Detail Penjualan'];
-        $activeMenu = 'penjualan'; // set menu yang sedang aktif
+        $activeMenu = 'penjualan'; // set barang yang sedang aktif
         return view('penjualan.show', ['breadcrumb' => $breadcrumb, 'page' => $page, 'penjualan' => $penjualan, 'activeMenu' => $activeMenu]);
     }
 

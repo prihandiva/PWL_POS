@@ -61,7 +61,7 @@ class PenjualanDetailController extends Controller
         $detail = PenjualanDetailModel::with('barang')->find($id);
         $breadcrumb = (object) ['title' => 'Detail detail', 'list' => ['Home', 'detail', 'Detail']];
         $page = (object) ['title' => 'Detail detail'];
-        $activeMenu = 'detail'; // set menu yang sedang aktif
+        $activeMenu = 'detail'; // set barang yang sedang aktif
         return view('detail.show', ['breadcrumb' => $breadcrumb, 'page' => $page, 'detail' => $detail, 'activeMenu' => $activeMenu]);
     }
 

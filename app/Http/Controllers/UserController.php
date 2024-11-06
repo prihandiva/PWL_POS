@@ -28,7 +28,7 @@ class UserController extends Controller
             'title' => 'Daftar user yang terdaftar dalam sistem'
         ];
 
-        $activeMenu = 'user'; //set menu yang aktif
+        $activeMenu = 'user'; //set barang yang aktif
         $level = levelmodel::all(); //mengambil data level untuk filter level
         return view('user.index', ['breadcrumb' => $breadcrumb, 'page' => $page, 'activeMenu' => $activeMenu, 'level'=>$level]);
     }

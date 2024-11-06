@@ -19,23 +19,15 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-<<<<<<< HEAD
-=======
-            background-color: #01153E; /* Biru navy */
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
+            background-color: #01153E;
             color: #FFFFFF;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-<<<<<<< HEAD
             background-size: cover;
             background-position: center;
-            background-blend-mode: overlay;
             background-image: url('{{ asset('images/background.png') }}');
-             
-=======
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
         }
 
         .login-box {
@@ -44,15 +36,15 @@
 
         .login-box .card {
             border-radius: 10px;
-            background-color: #3D5A80; /* Warna navy lebih terang */
+            background-color: #3D5A80;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .login-box .card-header {
-            background-color: #FAF3E0; /* Warna coklat */
+            background-color: #FAF3E0;
             border-bottom: none;
             text-align: center;
-            color: #FAF3E0; /* Cream */
+            color: #FAF3E0;
         }
 
         .login-box .card-header .h1 {
@@ -62,24 +54,24 @@
         }
 
         .login-box .card-body {
-            color: #FAF3E0; /* Cream */
+            color: #FAF3E0;
         }
 
         .input-group-text {
-            background-color: #563C5C; /* Warna coklat */
+            background-color: #563C5C;
             border: none;
             color: #FFF;
         }
 
         .form-control {
-            background-color: #E0FBFC; /* Warna biru muda */
+            background-color: #E0FBFC;
             border: none;
             color: #01153E;
         }
 
         .form-control:focus {
             background-color: #E0FBFC;
-            border-color: #563C5C; /* Border coklat saat fokus */
+            border-color: #563C5C;
         }
 
         .btn-primary {
@@ -90,33 +82,33 @@
         }
 
         .btn-primary:hover {
-            background-color: #FF9673; /* Warna coklat lebih terang */
+            background-color: #FF9673;
             transform: scale(1.05);
         }
 
         .icheck-primary input[type="checkbox"]:checked + label::before {
-            background-color: #563C5C; /* Warna coklat untuk checkbox */
+            background-color: #563C5C;
         }
 
         a {
-            color: #563C5C; /* Warna coklat untuk link */
+            color: #563C5C;
         }
 
         a:hover {
-            color: #FF9673; /* Warna coklat lebih terang saat hover */
+            color: #FF9673;
         }
 
         .error-text {
-            color: #FFB5A1; /* Warna merah muda untuk pesan error */
+            color: #FFB5A1;
         }
 
         .login-box-msg {
-            color: #FAF3E0 /* Cream untuk teks */
+            color: #FAF3E0;
             font-size: 18px;
         }
 
         .login-page {
-            background-color: #01153E; /* Dark navy background */
+            background-color: #01153E;
         }
 
         .login-box .card-body {
@@ -125,9 +117,6 @@
 
         .login-box .btn-block {
             padding: 10px 0;
-        }
-        .h1{
-            color: #01153E;
         }
     </style>
 </head>
@@ -252,9 +241,4 @@
         });
     </script>
 </body>
-
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e

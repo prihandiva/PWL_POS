@@ -9,12 +9,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<<<<<<< HEAD
     <!-- Slick Slider CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
-=======
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -27,15 +24,12 @@
             align-items: center;
             height: 100vh;
             text-align: center;
-<<<<<<< HEAD
             background-size: cover;
             background-position: center;
             background-blend-mode: overlay;
             background-image: url('{{ asset('images/background.png') }}');
             overflow: hidden;
             flex-direction: column;
-=======
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
         }
 
         h1 {
@@ -61,11 +55,7 @@
             cursor: pointer;
             margin: 0 10px;
             text-decoration: none;
-<<<<<<< HEAD
             transition: background-color 0.3s ease, transform 0.3s ease;
-=======
-            transition: background-color 0.3s ease;
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
         }
 
         .btn:hover {
@@ -84,16 +74,11 @@
         }
 
         .btn-register {
-<<<<<<< HEAD
             background-color: #FAF3E0;
-=======
-            background-color: #EE6C4D;
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
         }
 
         .container {
             max-width: 700px;
-<<<<<<< HEAD
             opacity: 0;
             transform: translateY(20px);
         }
@@ -103,16 +88,6 @@
             text-align: center;
             font-size: 14px;
             margin-bottom: 20px;
-=======
-        }
-
-        .footer {
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-            text-align: center;
-            font-size: 14px;
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
         }
 
         .footer a {
@@ -123,7 +98,6 @@
         .footer a:hover {
             text-decoration: underline;
         }
-<<<<<<< HEAD
 
         .slider {
             width: 20%;
@@ -134,33 +108,23 @@
             width: 100%;
             border-radius: 10px;
         }
-=======
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
     </style>
 </head>
 
 <body>
-<<<<<<< HEAD
 
-=======
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
     <div class="container">
         <img src="{{ asset('adminlte/dist/img/logo.png')}}" alt="Webss Kitchen Logo" style="width: 100px; margin-bottom: 20px;">
         <h1>🍴 Webss Kitchen 🍴</h1>
         <p>Rediscover your culinary journey with us.</p>
         <a href="{{ url('login') }}" class="btn btn-login">Login</a>
-<<<<<<< HEAD
         <a href="{{ url('register') }}" class="btn btn-register">Register</a>
-=======
-        <a href="{{ url('register') }}" class="btn">Register</a>
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
     </div>
 
     <div class="footer">
         <p>&copy; 2024 Webss Kitchen. <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
         <p>FITRIA RAMADHANI PRIHANDIVA | SIB 3D / 17</p>
     </div>
-<<<<<<< HEAD
 
     <!-- Slider Section (moved below footer) -->
     <div class="slider">
@@ -192,8 +156,6 @@
             }, 800);
         });
     </script>
-=======
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
 </body>
 
 </html>

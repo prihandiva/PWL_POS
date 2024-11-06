@@ -38,9 +38,9 @@ $('ul').Treeview(options)
 | Name | Type | Default | Description
 |-|-|-|-
 |animationSpeed | Number | 300 | Speed of slide down/up animation in milliseconds.
-|accordion | Boolean | TRUE | Whether to collapse the open menu when expanding another.
-|trigger | String | `[data-widget="treeview"] .nav-link` |  Selector of the element that should respond to the click and result in expanding or collapsing it sibling sub menu. 
-|expandSidebar | Boolean | FALSE | Whether to expand sidebar on open menu.
+|accordion | Boolean | TRUE | Whether to collapse the open barang when expanding another.
+|trigger | String | `[data-widget="treeview"] .nav-link` |  Selector of the element that should respond to the click and result in expanding or collapsing it sibling sub barang. 
+|expandSidebar | Boolean | FALSE | Whether to expand sidebar on open barang.
 |sidebarButtonSelector | String | `[data-widget="pushmenu"]` | Selector of the sidebar button.
 {: .table .table-bordered .bg-light}
 
@@ -65,8 +65,8 @@ $('ul').Treeview(options)
 |---
 | Event Type | Description
 |-|-
-|expanded.lte.treeview | Triggered after a sub menu expands.
-|collapsed.lte.treeview | Triggered after a sub menu collapses.
+|expanded.lte.treeview | Triggered after a sub barang expands.
+|collapsed.lte.treeview | Triggered after a sub barang collapses.
 |load.lte.treeview | Triggered after the plugin initialized via data api.
 {: .table .table-bordered .bg-light}
 

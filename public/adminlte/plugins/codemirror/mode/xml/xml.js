@@ -28,7 +28,7 @@ var htmlConfig = {
     'p': {'address': true, 'article': true, 'aside': true, 'blockquote': true, 'dir': true,
           'div': true, 'dl': true, 'fieldset': true, 'footer': true, 'form': true,
           'h1': true, 'h2': true, 'h3': true, 'h4': true, 'h5': true, 'h6': true,
-          'header': true, 'hgroup': true, 'hr': true, 'menu': true, 'nav': true, 'ol': true,
+          'header': true, 'hgroup': true, 'hr': true, 'barang': true, 'nav': true, 'ol': true,
           'p': true, 'pre': true, 'section': true, 'table': true, 'ul': true},
     'rp': {'rp': true, 'rt': true},
     'rt': {'rp': true, 'rt': true},

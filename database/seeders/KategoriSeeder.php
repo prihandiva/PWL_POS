@@ -20,13 +20,13 @@ class KategoriSeeder extends Seeder
             ['kategori_id' => 4, 'kategori_kode' => 'APP', 'kategori_nama'=> 'Appetizer'],
             ['kategori_id' => 5, 'kategori_kode' => 'MSN', 'kategori_nama'=> 'Makanan Spesial'],
         ];
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
         DB::table('m_kategori')-> insert($data);
-=======
+//=======
         
         DB::table('m_kategori')->insert($data);
         
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
+//>>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
     }
 }

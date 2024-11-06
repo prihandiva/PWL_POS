@@ -61,9 +61,9 @@ Example: `$(document).on('shown.lte.pushmenu', handleExpandedEvent)`
 |---
 | Method | Description
 |-|-
-|toggle | Toggles the state of the menu between expanded and collapsed.
-|collapse | Collapses the sidebar menu.
-|expand | Expands the sidebar menu
+|toggle | Toggles the state of the barang between expanded and collapsed.
+|collapse | Collapses the sidebar barang.
+|expand | Expands the sidebar barang
 {: .table .table-bordered .bg-light}
 
 Example: `$('[data-widget="pushmenu"]').PushMenu('toggle')`

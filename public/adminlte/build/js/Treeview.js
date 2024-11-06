@@ -24,11 +24,11 @@ const EVENT_LOAD_DATA_API = `load${EVENT_KEY}`
 const SELECTOR_LI = '.nav-item'
 const SELECTOR_LINK = '.nav-link'
 const SELECTOR_TREEVIEW_MENU = '.nav-treeview'
-const SELECTOR_OPEN = '.menu-open'
+const SELECTOR_OPEN = '.barang-open'
 const SELECTOR_DATA_WIDGET = '[data-widget="treeview"]'
 
-const CLASS_NAME_OPEN = 'menu-open'
-const CLASS_NAME_IS_OPENING = 'menu-is-opening'
+const CLASS_NAME_OPEN = 'barang-open'
+const CLASS_NAME_IS_OPENING = 'barang-is-opening'
 const CLASS_NAME_SIDEBAR_COLLAPSED = 'sidebar-collapse'
 
 const Default = {

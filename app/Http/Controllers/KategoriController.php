@@ -23,7 +23,7 @@ class KategoriController extends Controller
             'title' => 'Daftar kategori yang terdaftar dalam sistem'
         ];
 
-        $activeMenu = 'kategori'; // set menu yang sedang aktif
+        $activeMenu = 'kategori'; // set barang yang sedang aktif
         $kategori = KategoriModel::all();
         return view('kategori.index', [
             'breadcrumb' => $breadcrumb, 
@@ -95,7 +95,7 @@ class KategoriController extends Controller
             'title' => 'Edit kategori'
         ];
 
-        $activeMenu = 'kategori'; // set menu yang sedang aktif
+        $activeMenu = 'kategori'; // set barang yang sedang aktif
 
         return view('kategori.edit', ['breadcrumb' => $breadcrumb, 'page' => $page, 'kategori' => $kategori, 'activeMenu' => $activeMenu]);
     }

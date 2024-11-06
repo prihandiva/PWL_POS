@@ -31,7 +31,7 @@ The main header contains the navbar. Construction of the navbar differs slightly
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Help
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <div class="dropdown-barang" aria-labelledby="navbarDropdown">
         <a class="dropdown-item" href="#">FAQ</a>
         <a class="dropdown-item" href="#">Support</a>
         <div class="dropdown-divider"></div>
@@ -60,7 +60,7 @@ The main header contains the navbar. Construction of the navbar differs slightly
         <i class="far fa-comments"></i>
         <span class="badge badge-danger navbar-badge">3</span>
       </a>
-      <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+      <div class="dropdown-barang dropdown-barang-lg dropdown-barang-right">
         <a href="#" class="dropdown-item">
           <!-- Message Start -->
           <div class="media">
@@ -118,7 +118,7 @@ The main header contains the navbar. Construction of the navbar differs slightly
         <i class="far fa-bell"></i>
         <span class="badge badge-warning navbar-badge">15</span>
       </a>
-      <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+      <div class="dropdown-barang dropdown-barang-lg dropdown-barang-right">
         <span class="dropdown-header">15 Notifications</span>
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item">
@@ -164,7 +164,7 @@ The main header contains the navbar. Construction of the navbar differs slightly
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Help
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+      <div class="dropdown-barang" aria-labelledby="navbarDropdown2">
         <a class="dropdown-item" href="#">FAQ</a>
         <a class="dropdown-item" href="#">Support</a>
         <div class="dropdown-divider"></div>
@@ -193,7 +193,7 @@ The main header contains the navbar. Construction of the navbar differs slightly
         <i class="far fa-comments"></i>
         <span class="badge badge-danger navbar-badge">3</span>
       </a>
-      <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+      <div class="dropdown-barang dropdown-barang-lg dropdown-barang-right">
         <a href="#" class="dropdown-item">
           <!-- Message Start -->
           <div class="media">
@@ -251,7 +251,7 @@ The main header contains the navbar. Construction of the navbar differs slightly
         <i class="far fa-bell"></i>
         <span class="badge badge-warning navbar-badge">15</span>
       </a>
-      <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+      <div class="dropdown-barang dropdown-barang-lg dropdown-barang-right">
         <span class="dropdown-header">15 Notifications</span>
         <div class="dropdown-divider"></div>
         <a href="#" class="dropdown-item">
@@ -313,7 +313,7 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Help
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+        <div class="dropdown-barang" aria-labelledby="navbarDropdown3">
           <a class="dropdown-item" href="#">FAQ</a>
           <a class="dropdown-item" href="#">Support</a>
           <div class="dropdown-divider"></div>
@@ -340,7 +340,7 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
           <i class="fas fa-comments"></i>
           <span class="badge badge-danger navbar-badge">3</span>
         </a>
-       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+       <div class="dropdown-barang dropdown-barang-lg dropdown-barang-right">
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
@@ -398,7 +398,7 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
           <i class="far fa-bell"></i>
           <span class="badge badge-warning navbar-badge">15</span>
         </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+        <div class="dropdown-barang dropdown-barang-lg dropdown-barang-right">
           <span class="dropdown-header">15 Notifications</span>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
@@ -450,7 +450,7 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Help
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+        <div class="dropdown-barang" aria-labelledby="navbarDropdown4">
           <a class="dropdown-item" href="#">FAQ</a>
           <a class="dropdown-item" href="#">Support</a>
           <div class="dropdown-divider"></div>
@@ -477,7 +477,7 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
           <i class="fas fa-comments"></i>
           <span class="badge badge-danger navbar-badge">3</span>
         </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+        <div class="dropdown-barang dropdown-barang-lg dropdown-barang-right">
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
@@ -535,7 +535,7 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
           <i class="far fa-bell"></i>
           <span class="badge badge-warning navbar-badge">15</span>
         </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+        <div class="dropdown-barang dropdown-barang-lg dropdown-barang-right">
           <span class="dropdown-header">15 Notifications</span>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
@@ -569,6 +569,6 @@ Top navbar example can be found in this [demo page](https://adminlte.io/themes/d
 
 
 > ##### Tip!
-> To get a bigger dropdown menu you can add `.dropdown-menu-lg` or `.dropdown-menu-xl` to `.dropdown-menu`.
+> To get a bigger dropdown barang you can add `.dropdown-barang-lg` or `.dropdown-barang-xl` to `.dropdown-barang`.
 > You can also get the legacy dropdown offset with adding `.dropdown-legacy` to `.main-header`.
 {: .quote-info}

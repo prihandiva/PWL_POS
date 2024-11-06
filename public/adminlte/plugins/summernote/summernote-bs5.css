@@ -186,7 +186,7 @@
     content: "\ea20";
 }
 
-.note-icon-menu-check::before {
+.note-icon-barang-check::before {
     content: "\ea21";
 }
 
@@ -573,30 +573,30 @@
     margin: 0;
     padding: 0;
 }
-.note-popover .popover-content .note-color-all .note-dropdown-menu, .note-editor .note-toolbar .note-color-all .note-dropdown-menu {
+.note-popover .popover-content .note-color-all .note-dropdown-barang, .note-editor .note-toolbar .note-color-all .note-dropdown-barang {
     min-width: 337px;
 }
 .note-popover .popover-content .note-color .dropdown-toggle, .note-editor .note-toolbar .note-color .dropdown-toggle {
     width: 20px;
     padding-left: 5px;
 }
-.note-popover .popover-content .note-color .note-dropdown-menu .note-palette, .note-editor .note-toolbar .note-color .note-dropdown-menu .note-palette {
+.note-popover .popover-content .note-color .note-dropdown-barang .note-palette, .note-editor .note-toolbar .note-color .note-dropdown-barang .note-palette {
     display: inline-block;
     margin: 0;
     width: 160px;
 }
-.note-popover .popover-content .note-color .note-dropdown-menu .note-palette:first-child, .note-editor .note-toolbar .note-color .note-dropdown-menu .note-palette:first-child {
+.note-popover .popover-content .note-color .note-dropdown-barang .note-palette:first-child, .note-editor .note-toolbar .note-color .note-dropdown-barang .note-palette:first-child {
     margin: 0 5px;
 }
-.note-popover .popover-content .note-color .note-dropdown-menu .note-palette .note-palette-title, .note-editor .note-toolbar .note-color .note-dropdown-menu .note-palette .note-palette-title {
+.note-popover .popover-content .note-color .note-dropdown-barang .note-palette .note-palette-title, .note-editor .note-toolbar .note-color .note-dropdown-barang .note-palette .note-palette-title {
     font-size: 12px;
     margin: 2px 7px;
     text-align: center;
     border-bottom: 1px solid #eee;
 }
-.note-popover .popover-content .note-color .note-dropdown-menu .note-palette .note-color-reset,
-.note-popover .popover-content .note-color .note-dropdown-menu .note-palette .note-color-select, .note-editor .note-toolbar .note-color .note-dropdown-menu .note-palette .note-color-reset,
-.note-editor .note-toolbar .note-color .note-dropdown-menu .note-palette .note-color-select {
+.note-popover .popover-content .note-color .note-dropdown-barang .note-palette .note-color-reset,
+.note-popover .popover-content .note-color .note-dropdown-barang .note-palette .note-color-select, .note-editor .note-toolbar .note-color .note-dropdown-barang .note-palette .note-color-reset,
+.note-editor .note-toolbar .note-color .note-dropdown-barang .note-palette .note-color-select {
     font-size: 11px;
     margin: 3px;
     padding: 0 3px;
@@ -604,47 +604,47 @@
     width: 100%;
     border-radius: 5px;
 }
-.note-popover .popover-content .note-color .note-dropdown-menu .note-palette .note-color-reset:hover,
-.note-popover .popover-content .note-color .note-dropdown-menu .note-palette .note-color-select:hover, .note-editor .note-toolbar .note-color .note-dropdown-menu .note-palette .note-color-reset:hover,
-.note-editor .note-toolbar .note-color .note-dropdown-menu .note-palette .note-color-select:hover {
+.note-popover .popover-content .note-color .note-dropdown-barang .note-palette .note-color-reset:hover,
+.note-popover .popover-content .note-color .note-dropdown-barang .note-palette .note-color-select:hover, .note-editor .note-toolbar .note-color .note-dropdown-barang .note-palette .note-color-reset:hover,
+.note-editor .note-toolbar .note-color .note-dropdown-barang .note-palette .note-color-select:hover {
     background: #eee;
 }
-.note-popover .popover-content .note-color .note-dropdown-menu .note-palette .note-color-row, .note-editor .note-toolbar .note-color .note-dropdown-menu .note-palette .note-color-row {
+.note-popover .popover-content .note-color .note-dropdown-barang .note-palette .note-color-row, .note-editor .note-toolbar .note-color .note-dropdown-barang .note-palette .note-color-row {
     height: 20px;
 }
-.note-popover .popover-content .note-color .note-dropdown-menu .note-palette .note-color-select-btn, .note-editor .note-toolbar .note-color .note-dropdown-menu .note-palette .note-color-select-btn {
+.note-popover .popover-content .note-color .note-dropdown-barang .note-palette .note-color-select-btn, .note-editor .note-toolbar .note-color .note-dropdown-barang .note-palette .note-color-select-btn {
     display: none;
 }
-.note-popover .popover-content .note-color .note-dropdown-menu .note-palette .note-holder-custom .note-color-btn, .note-editor .note-toolbar .note-color .note-dropdown-menu .note-palette .note-holder-custom .note-color-btn {
+.note-popover .popover-content .note-color .note-dropdown-barang .note-palette .note-holder-custom .note-color-btn, .note-editor .note-toolbar .note-color .note-dropdown-barang .note-palette .note-holder-custom .note-color-btn {
     border: 1px solid #eee;
 }
-.note-popover .popover-content .note-para .note-dropdown-menu, .note-editor .note-toolbar .note-para .note-dropdown-menu {
+.note-popover .popover-content .note-para .note-dropdown-barang, .note-editor .note-toolbar .note-para .note-dropdown-barang {
     min-width: 228px;
     padding: 5px;
 }
-.note-popover .popover-content .note-para .note-dropdown-menu > div + div, .note-editor .note-toolbar .note-para .note-dropdown-menu > div + div {
+.note-popover .popover-content .note-para .note-dropdown-barang > div + div, .note-editor .note-toolbar .note-para .note-dropdown-barang > div + div {
     margin-left: 5px;
 }
-.note-popover .popover-content .note-dropdown-menu, .note-editor .note-toolbar .note-dropdown-menu {
+.note-popover .popover-content .note-dropdown-barang, .note-editor .note-toolbar .note-dropdown-barang {
     min-width: 160px;
 }
-.note-popover .popover-content .note-dropdown-menu.right, .note-editor .note-toolbar .note-dropdown-menu.right {
+.note-popover .popover-content .note-dropdown-barang.right, .note-editor .note-toolbar .note-dropdown-barang.right {
     right: 0;
     left: auto;
 }
-.note-popover .popover-content .note-dropdown-menu.right::before, .note-editor .note-toolbar .note-dropdown-menu.right::before {
+.note-popover .popover-content .note-dropdown-barang.right::before, .note-editor .note-toolbar .note-dropdown-barang.right::before {
     right: 9px;
     left: auto !important;
 }
-.note-popover .popover-content .note-dropdown-menu.right::after, .note-editor .note-toolbar .note-dropdown-menu.right::after {
+.note-popover .popover-content .note-dropdown-barang.right::after, .note-editor .note-toolbar .note-dropdown-barang.right::after {
     right: 10px;
     left: auto !important;
 }
-.note-popover .popover-content .note-dropdown-menu.note-check a i, .note-editor .note-toolbar .note-dropdown-menu.note-check a i {
+.note-popover .popover-content .note-dropdown-barang.note-check a i, .note-editor .note-toolbar .note-dropdown-barang.note-check a i {
     color: deepskyblue;
     visibility: hidden;
 }
-.note-popover .popover-content .note-dropdown-menu.note-check a.checked i, .note-editor .note-toolbar .note-dropdown-menu.note-check a.checked i {
+.note-popover .popover-content .note-dropdown-barang.note-check a.checked i, .note-editor .note-toolbar .note-dropdown-barang.note-check a.checked i {
     visibility: visible;
 }
 .note-popover .popover-content .note-fontsize-10, .note-editor .note-toolbar .note-fontsize-10 {

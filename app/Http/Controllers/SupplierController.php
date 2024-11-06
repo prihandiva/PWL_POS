@@ -22,7 +22,7 @@ class SupplierController extends Controller
             'title' => 'Daftar supplier yang terdaftar dalam sistem'
         ];
 
-        $activeMenu = 'supplier'; // set menu yang sedang aktif
+        $activeMenu = 'supplier'; // set barang yang sedang aktif
         $supplier = SupplierModel::all();
         return view('supplier.index', [
             'breadcrumb' => $breadcrumb, 
@@ -94,7 +94,7 @@ class SupplierController extends Controller
             'title' => 'Detail supplier'
         ];
 
-        $activeMenu = 'supplier'; // set menu yang sedang aktif
+        $activeMenu = 'supplier'; // set barang yang sedang aktif
 
         return view('supplier.show', ['breadcrumb' => $breadcrumb, 'page' => $page, 'supplier' => $supplier, 'activeMenu' => $activeMenu]);
     }
@@ -113,7 +113,7 @@ class SupplierController extends Controller
             'title' => 'Edit supplier'
         ];
 
-        $activeMenu = 'supplier'; // set menu yang sedang aktif
+        $activeMenu = 'supplier'; // set barang yang sedang aktif
 
         return view('supplier.edit', ['breadcrumb' => $breadcrumb, 'page' => $page, 'supplier' => $supplier, 'activeMenu' => $activeMenu]);
     }

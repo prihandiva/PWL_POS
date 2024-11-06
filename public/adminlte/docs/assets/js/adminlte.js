@@ -816,10 +816,10 @@
   var DATA_KEY$a = 'lte.dropdown';
   var JQUERY_NO_CONFLICT$a = $__default["default"].fn[NAME$a];
   var SELECTOR_NAVBAR = '.navbar';
-  var SELECTOR_DROPDOWN_MENU = '.dropdown-menu';
-  var SELECTOR_DROPDOWN_MENU_ACTIVE = '.dropdown-menu.show';
+  var SELECTOR_DROPDOWN_MENU = '.dropdown-barang';
+  var SELECTOR_DROPDOWN_MENU_ACTIVE = '.dropdown-barang.show';
   var SELECTOR_DROPDOWN_TOGGLE = '[data-toggle="dropdown"]';
-  var CLASS_NAME_DROPDOWN_RIGHT = 'dropdown-menu-right';
+  var CLASS_NAME_DROPDOWN_RIGHT = 'dropdown-barang-right';
   var CLASS_NAME_DROPDOWN_SUBMENU = 'dropdown-submenu'; // TODO: this is unused; should be removed along with the extend?
 
   var Default$9 = {};
@@ -2895,10 +2895,10 @@
   var SELECTOR_LI = '.nav-item';
   var SELECTOR_LINK = '.nav-link';
   var SELECTOR_TREEVIEW_MENU = '.nav-treeview';
-  var SELECTOR_OPEN = '.menu-open';
+  var SELECTOR_OPEN = '.barang-open';
   var SELECTOR_DATA_WIDGET = '[data-widget="treeview"]';
-  var CLASS_NAME_OPEN = 'menu-open';
-  var CLASS_NAME_IS_OPENING = 'menu-is-opening';
+  var CLASS_NAME_OPEN = 'barang-open';
+  var CLASS_NAME_IS_OPENING = 'barang-is-opening';
   var CLASS_NAME_SIDEBAR_COLLAPSED = 'sidebar-collapse';
   var Default = {
     trigger: SELECTOR_DATA_WIDGET + " " + SELECTOR_LINK,

@@ -70,12 +70,12 @@
   }
 
   .status,
-  .dropdown-menu {
+  .dropdown-barang {
     font-size: $font-size-sm;
   }
 }
 
-// Sidebar navigation menu
+// Sidebar navigation barang
 .nav-sidebar {
   // All levels
   .nav-item {
@@ -104,14 +104,14 @@
     }
   }
 
-  .menu-open {
+  .barang-open {
     > .nav-treeview {
       display: block;
     }
   }
 
-  .menu-open,
-  .menu-is-opening {
+  .barang-open,
+  .barang-is-opening {
     > .nav-link {
       svg.right,
       i.right {
@@ -148,7 +148,7 @@
     }
   }
 
-  // Tree view menu
+  // Tree view barang
   .nav-treeview {
     display: none;
     list-style: none;
@@ -247,7 +247,7 @@
       }
     }
 
-    .dropdown-menu {
+    .dropdown-barang {
       @include box-shadow(0 2px 4px rgba(0, 0, 0, .4));
       border-color: darken($sidebar-light-hover-bg, 5%);
     }
@@ -269,7 +269,7 @@
     }
 
     // Hover and active states
-    &.menu-open > .nav-link,
+    &.barang-open > .nav-link,
     &:hover > .nav-link {
       background-color: $sidebar-light-hover-bg;
       color: $sidebar-light-hover-color;
@@ -295,7 +295,7 @@
     color: darken($sidebar-light-color, 5%);
   }
 
-  // All links within the sidebar menu
+  // All links within the sidebar barang
   .sidebar {
     a {
       color: $sidebar-light-color;
@@ -376,7 +376,7 @@
       }
     }
 
-    .dropdown-menu {
+    .dropdown-barang {
       @include box-shadow(0 2px 4px rgba(0, 0, 0, .4));
       border-color: darken($sidebar-dark-hover-bg, 5%);
     }
@@ -397,7 +397,7 @@
     }
 
     // Hover and active states
-    &.menu-open > .nav-link,
+    &.barang-open > .nav-link,
     &:hover > .nav-link,
     > .nav-link:focus {
       background-color: $sidebar-dark-hover-bg;
@@ -424,7 +424,7 @@
     color: lighten($sidebar-dark-color, 5%);
   }
 
-  // All links within the sidebar menu
+  // All links within the sidebar barang
   .sidebar {
     a {
       color: $sidebar-dark-color;
@@ -855,7 +855,7 @@
 }
 
 .nav-collapse-hide-child {
-  .menu-open > .nav-treeview {
+  .barang-open > .nav-treeview {
     max-height: min-content;
     animation-name: fadeIn;
     animation-duration: $transition-speed;
@@ -863,7 +863,7 @@
   }
 
   .sidebar-collapse .sidebar:not(:hover) & {
-    .menu-open > .nav-treeview {
+    .barang-open > .nav-treeview {
       max-height: 0;
       animation-name: fadeOut;
       animation-duration: $transition-speed;
@@ -876,7 +876,7 @@
   .sidebar-mini-xs.sidebar-collapse {
     .main-sidebar.sidebar-focused &,
     .main-sidebar:not(.sidebar-no-expand):hover & {
-      .menu-open > .nav-treeview {
+      .barang-open > .nav-treeview {
         max-height: min-content;
         animation-name: fadeIn;
         animation-duration: $transition-speed;

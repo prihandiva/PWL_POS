@@ -113,48 +113,48 @@
 	left: 0;
 	cursor: default;
 }
-.ui-menu {
+.ui-barang {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 	display: block;
 	outline: 0;
 }
-.ui-menu .ui-menu {
+.ui-barang .ui-barang {
 	position: absolute;
 }
-.ui-menu .ui-menu-item {
+.ui-barang .ui-barang-item {
 	margin: 0;
 	cursor: pointer;
 	/* support: IE10, see #8844 */
 	list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
 }
-.ui-menu .ui-menu-item-wrapper {
+.ui-barang .ui-barang-item-wrapper {
 	position: relative;
 	padding: 3px 1em 3px .4em;
 }
-.ui-menu .ui-menu-divider {
+.ui-barang .ui-barang-divider {
 	margin: 5px 0;
 	height: 0;
 	font-size: 0;
 	line-height: 0;
 	border-width: 1px 0 0 0;
 }
-.ui-menu .ui-state-focus,
-.ui-menu .ui-state-active {
+.ui-barang .ui-state-focus,
+.ui-barang .ui-state-active {
 	margin: -1px;
 }
 
 /* icon support */
-.ui-menu-icons {
+.ui-barang-icons {
 	position: relative;
 }
-.ui-menu-icons .ui-menu-item-wrapper {
+.ui-barang-icons .ui-barang-item-wrapper {
 	padding-left: 2em;
 }
 
 /* left-aligned */
-.ui-menu .ui-icon {
+.ui-barang .ui-icon {
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -163,7 +163,7 @@
 }
 
 /* right-aligned */
-.ui-menu .ui-menu-icon {
+.ui-barang .ui-barang-icon {
 	left: auto;
 	right: 0;
 }
@@ -683,7 +683,7 @@ button.ui-button::-moz-focus-inner {
 	z-index: 100;
 	border: 1px dotted black;
 }
-.ui-selectmenu-menu {
+.ui-selectmenu-barang {
 	padding: 0;
 	margin: 0;
 	position: absolute;
@@ -691,12 +691,12 @@ button.ui-button::-moz-focus-inner {
 	left: 0;
 	display: none;
 }
-.ui-selectmenu-menu .ui-menu {
+.ui-selectmenu-barang .ui-barang {
 	overflow: auto;
 	overflow-x: hidden;
 	padding-bottom: 1px;
 }
-.ui-selectmenu-menu .ui-menu .ui-selectmenu-optgroup {
+.ui-selectmenu-barang .ui-barang .ui-selectmenu-optgroup {
 	font-size: 1em;
 	font-weight: bold;
 	line-height: 1.5;

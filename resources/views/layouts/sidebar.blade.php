@@ -12,24 +12,16 @@
     </div>
     <!-- Sidebar Menu -->
     <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="barang" data-accordion="false">
             <li class="nav-item">
-<<<<<<< HEAD
                 <a href="{{ url('/') }}" class="nav-link {{ ($activeMenu == 'dashboard')? 'active' : '' }}">
-=======
-                <a href="{{ url('/') }}" class="nav-link {{ ($activeMenu == 'dashboard')? 'active' : '' }} ">
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>Dashboard</p>
                 </a>
             </li>
             <li class="nav-header">Data Pengguna</li>
             <li class="nav-item">
-<<<<<<< HEAD
                 <a href="{{ url('/level') }}" class="nav-link {{ ($activeMenu == 'level')? 'active' : '' }}">
-=======
-                <a href="{{ url('/level') }}" class="nav-link {{ ($activeMenu == 'level')? 'active' : '' }} ">
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
                     <i class="nav-icon fas fa-layer-group"></i>
                     <p>Level User</p>
                 </a>
@@ -49,72 +41,38 @@
             </li>
             <li class="nav-header">Data Barang</li>
             <li class="nav-item">
-<<<<<<< HEAD
                 <a href="{{ url('/kategori') }}" class="nav-link {{ ($activeMenu == 'kategori')? 'active' : '' }}">
-=======
-                <a href="{{ url('/kategori') }}" class="nav-link {{ ($activeMenu == 'kategori')? 'active' : '' }} ">
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
                     <i class="nav-icon far fa-bookmark"></i>
                     <p>Kategori Barang</p>
                 </a>
             </li>
             <li class="nav-item">
-<<<<<<< HEAD
                 <a href="{{ url('/barang') }}" class="nav-link {{ ($activeMenu == 'barang')? 'active' : '' }}">
                     <i class="nav-icon far fa-list-alt"></i>
                     <p>Data Barang</p>
-=======
-                <a href="{{ url('/barang') }}" class="nav-link {{ ($activeMenu == 'barang')? 'active' : '' }} ">
-                    <i class="nav-icon far fa-list-alt"></i>
-                    <p>Data Menu</p>
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
                 </a>
             </li>
             <li class="nav-header">Data Transaksi</li>
             <li class="nav-item">
-<<<<<<< HEAD
                 <a href="{{ url('/stok') }}" class="nav-link {{ ($activeMenu == 'stok')? 'active' : '' }}">
-=======
-                <a href="{{ url('/stok') }}" class="nav-link {{ ($activeMenu == 'stok')? 'active' : '' }} ">
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
                     <i class="nav-icon fas fa-cubes"></i>
                     <p>Stok Barang</p>
                 </a>
             </li>
             <li class="nav-item">
-<<<<<<< HEAD
-                <a href="{{ url('/penjualan') }}" class="nav-link {{ ($activeMenu == 'penjualan')? 'active' : '' }}">
-=======
-                <a href="{{ url('/transaksi') }}" class="nav-link {{ ($activeMenu == 'penjualan')? 'active' : '' }} ">
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
+                <a href="{{ url('/transaksi') }}" class="nav-link {{ ($activeMenu == 'penjualan')? 'active' : '' }}">
                     <i class="nav-icon fas fa-cash-register"></i>
                     <p>Transaksi Penjualan</p>
-                </a>
-            </li>
-<<<<<<< HEAD
-            <li class="nav-item">
-                <a href="{{ url('/detail') }}" class="nav-link {{ ($activeMenu == 'detailpenjualan')? 'active' : '' }}">
-                    <i class="nav-icon fas fa-cash-register"></i>
-                    <p>Detail Penjualan</p>
                 </a>
             </li>
             <li class="nav-header">Data Supplier</li>
             <li class="nav-item">
                 <a href="{{ url('/supplier') }}" class="nav-link {{ ($activeMenu == 'supplier')? 'active' : '' }}">
-=======
-            <li class="nav-header">Data Supplier</li>
-            <li class="nav-item">
-                <a href="{{ url('/supplier') }}" class="nav-link {{ ($activeMenu == 'supplier')? 'active' : '' }} ">
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
                     <i class="nav-icon far fa-user"></i>
                     <p>Data Supplier</p>
                 </a>
             </li>
-<<<<<<< HEAD
             <!-- Menu Logout -->
-=======
-            <!-- Menambahkan Menu Logout -->
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e
             <li class="nav-header">Log Out</li>
             <li class="nav-item">
                 <a href="{{ url('logout') }}" class="nav-link"
@@ -129,60 +87,47 @@
         </ul>
     </nav>
 </div>
-<<<<<<< HEAD
+
 <style>
 .sidebar {
-    background-color: #01153E; /* Warna navy untuk background sidebar */
+    background-color: #01153E;
     padding: 10px;
-    color: #FAF3E0; /* Warna cream untuk teks */
+    color: #FAF3E0;
 }
-
 .nav-sidebar .nav-link {
-    color: #FAF3E0; /* Warna cream untuk teks */
+    color: #FAF3E0;
 }
-
 .nav-sidebar .nav-link:hover {
-    background-color: #563C5C; /* Warna coklat untuk hover pada menu */
-    color: #FF9673; /* Warna coklat lebih terang */
+    background-color: #563C5C;
+    color: #FF9673;
 }
-
 .nav-sidebar .nav-link.active {
-    background-color: #FF9673; /* Warna coklat terang untuk menu yang aktif */
-    color: #01153E; /* Warna navy untuk teks menu yang aktif */
+    background-color: #FF9673;
+    color: #01153E;
 }
-
 .nav-header {
-    color: #FF9673; /* Warna coklat terang untuk header menu */
+    color: #FF9673;
     font-weight: bold;
     margin-top: 10px;
     margin-bottom: 5px;
 }
-
 .form-control-sidebar {
-    background-color: #FAF3E0; /* Warna cream untuk kotak pencarian */
-    border: 1px solid #563C5C; /* Border warna coklat */
-    color: #01153E; /* Warna navy untuk teks pencarian */
+    background-color: #FAF3E0;
+    border: 1px solid #563C5C;
+    color: #01153E;
 }
-
 .form-control-sidebar::placeholder {
-    color: #563C5C; /* Placeholder dengan warna coklat */
+    color: #563C5C;
 }
-
 .btn-sidebar {
-    background-color: #FF9673; /* Tombol pencarian warna coklat terang */
+    background-color: #FF9673;
     border: none;
-    color: #01153E; /* Ikon pencarian warna navy */
+    color: #01153E;
 }
-
 .nav-icon {
-    color: #FF9673; /* Warna coklat terang untuk ikon */
+    color: #FF9673;
 }
-
 .nav-icon:hover {
-    color: #FAF3E0; /* Warna cream saat hover ikon */
+    color: #FAF3E0;
 }
-
-
 </style>
-=======
->>>>>>> ce8e93b3395ff72a10ec1939d2f06e9120d0f31e

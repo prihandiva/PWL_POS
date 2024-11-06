@@ -3,7 +3,7 @@ layout: page
 title: Sidebar Search Plugin
 ---
 
-The sidebar search plugin provides the functionality to search menu items from the sidebar menu entries. 
+The sidebar search plugin provides the functionality to search barang items from the sidebar barang entries. 
 
 ##### Usage
 
@@ -45,13 +45,13 @@ Place this HTML Markup after `div.user-panel`.
 |---
 | Name | Type | Default | Description
 |-|-|-|-
-| arrowSign | String | '->' | Arrow Sign between the menu item path.
+| arrowSign | String | '->' | Arrow Sign between the barang item path.
 | minLength | Number | 3 | Min search query length.
 | maxResults | Number | 7 | Max search results to display.
-| highlightName | Boolean | TRUE | Whether to highlight menu item name.
-| highlightPath | Boolean | FALSE  | Whether to highlight menu item path.
+| highlightName | Boolean | TRUE | Whether to highlight barang item name.
+| highlightPath | Boolean | FALSE  | Whether to highlight barang item path.
 | highlightClass | String | 'text-light' | Hightlight class.
-| notFoundText | String | 'No element found! | Response text if no menu item found.
+| notFoundText | String | 'No element found! | Response text if no barang item found.
 {: .table .table-bordered .bg-light}
 
 
@@ -61,7 +61,7 @@ Place this HTML Markup after `div.user-panel`.
 |---
 | Method | Description
 |-|-
-|init | Init's the SidebarSearch Plugin and registers all visible menu items.
+|init | Init's the SidebarSearch Plugin and registers all visible barang items.
 |toggle | Toggles the search dropdown list.
 |close | Closes the search dropdown list.
 |open | Opens the search dropdown list.

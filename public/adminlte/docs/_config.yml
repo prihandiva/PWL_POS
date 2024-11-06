@@ -50,7 +50,7 @@ navigation:
       - title: Layout
         url: javascript/layout.html
       - title: Push Menu
-        url: javascript/push-menu.html
+        url: javascript/push-barang.html
       - title: Treeview
         url: javascript/treeview.html
       - title: Card Widget

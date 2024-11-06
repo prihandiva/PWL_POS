@@ -194,7 +194,7 @@
     },
     map: { attrs: { name: null } },
     mark: s,
-    menu: { attrs: { label: null, type: ["list", "context", "toolbar"] } },
+    barang: { attrs: { label: null, type: ["list", "context", "toolbar"] } },
     meta: {
       attrs: {
         content: null,

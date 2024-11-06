@@ -71,7 +71,7 @@
     padding-right: $navbar-nav-link-padding-x;
   }
 
-  .dropdown-menu {
+  .dropdown-barang {
     position: absolute;
   }
 }
@@ -101,7 +101,7 @@
 .navbar-nav-not-expanded {
   flex-direction: row;
 
-  .dropdown-menu {
+  .dropdown-barang {
     position: absolute;
   }
 

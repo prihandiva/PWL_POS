@@ -13,7 +13,7 @@
 //}
 
 .text-sm {
-  .dropdown-menu {
+  .dropdown-barang {
     font-size: $font-size-sm !important;
   }
 
@@ -34,7 +34,7 @@
 }
 
 // Dropdown Sizes
-.dropdown-menu-lg {
+.dropdown-barang-lg {
   max-width: 300px;
   min-width: 280px;
   padding: 0;
@@ -64,7 +64,7 @@
     margin-top: .5rem;
   }
 
-  > .dropdown-menu {
+  > .dropdown-barang {
     left: 100%;
     margin-left: 0;
     margin-top: 0;
@@ -78,7 +78,7 @@
   &.nav-item.dropdown:hover,
   .dropdown-submenu:hover,
   &.dropdown-submenu:hover {
-    > .dropdown-menu {
+    > .dropdown-barang {
       display: block;
     }
   }
@@ -86,7 +86,7 @@
 
 
 // Dropdown Sizes
-.dropdown-menu-xl {
+.dropdown-barang-xl {
   max-width: 420px;
   min-width: 360px;
   padding: 0;
@@ -115,17 +115,17 @@
 }
 
 // Add fade animation to dropdown menus by appending
-// the class .animated-dropdown-menu to the .dropdown-menu ul (or ol)
-.open:not(.dropup) > .animated-dropdown-menu {
+// the class .animated-dropdown-barang to the .dropdown-barang ul (or ol)
+.open:not(.dropup) > .animated-dropdown-barang {
   @include animation(flipInX .7s both);
   backface-visibility: visible !important;
 }
 
-// Fix dropdown menu in navbars
-.navbar-custom-menu > .navbar-nav {
+// Fix dropdown barang in navbars
+.navbar-custom-barang > .navbar-nav {
   > li {
     position: relative;
-    > .dropdown-menu {
+    > .dropdown-barang {
       position: absolute;
       right: 0;
       left: auto;
@@ -134,11 +134,11 @@
 }
 
 @include media-breakpoint-down(sm) {
-  .navbar-custom-menu > .navbar-nav {
+  .navbar-custom-barang > .navbar-nav {
     float: right;
     > li {
       position: static;
-      > .dropdown-menu {
+      > .dropdown-barang {
         position: absolute;
         right: 5%;
         left: auto;
@@ -150,12 +150,12 @@
 }
 
 // User Menu
-.navbar-nav > .user-menu {
+.navbar-nav > .user-barang {
   > .nav-link::after {
     content: none;
   }
 
-  > .dropdown-menu {
+  > .dropdown-barang {
     @include border-top-radius(0);
     padding: 0;
     width: 280px;
@@ -165,7 +165,7 @@
       @include border-bottom-radius(4px);
     }
 
-    // Header menu
+    // Header barang
     > li.user-header {
       height: 175px;
       padding: 10px;
@@ -245,7 +245,7 @@
 }
 
 @include dark-mode () {
-  .dropdown-menu {
+  .dropdown-barang {
     background-color: $dark;
     color: $white;
   }
@@ -261,7 +261,7 @@
     border-color: $gray-600;
   }
 
-  .navbar-nav > .user-menu > .dropdown-menu {
+  .navbar-nav > .user-barang > .dropdown-barang {
     > .user-footer {
       background-color: lighten($dark, 2.5%);
       color: $white;

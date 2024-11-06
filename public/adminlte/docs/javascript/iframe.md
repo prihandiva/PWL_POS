@@ -33,7 +33,7 @@ To get the iframe 100% working you need the following content-wrapper markup:
   <div class="nav navbar navbar-expand navbar-white navbar-light border-bottom p-0">
     <div class="nav-item dropdown">
       <a class="nav-link bg-danger dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Close</a>
-      <div class="dropdown-menu mt-0">
+      <div class="dropdown-barang mt-0">
         <a class="dropdown-item" href="#" data-widget="iframe-close" data-type="all">Close All</a>
         <a class="dropdown-item" href="#" data-widget="iframe-close" data-type="all-other">Close All Other</a>
       </div>
@@ -99,13 +99,13 @@ $('.content-wrapper').IFrame({
 |onTabChanged | Function | Anonymous Function | Handle tab changed event.
 |onTabCreated | Function | Anonymous Function | Handle tab created event.
 |autoIframeMode | Boolean | true | Whether to automatically add `.iframe-mode` to `body` if page is loaded via iframe.
-|autoItemActive | Boolean | true | Whether to automatically set the sidebar menu item active based on the active iframe.
+|autoItemActive | Boolean | true | Whether to automatically set the sidebar barang item active based on the active iframe.
 |autoShowNewTab | Boolean | true | Whether to automatically display created tab.
 |autoDarkMode | Boolean | false | Whether to automatically enable dark-mode in iframe pages.
 |allowDuplicates | Boolean | true | Whether to allow creation of duplicate tab/iframe.
 |allowReload | Boolean | true | Whether to allow reload non duplicate tab/iframes.
 |loadingScreen | Boolean/Number | true | [Boolean] Whether to enable iframe loading screen; [Number] Set loading screen hide delay.
-|useNavbarItems | Boolean | true | Whether to open navbar menu items, instead of open only sidebar menu items.
+|useNavbarItems | Boolean | true | Whether to open navbar barang items, instead of open only sidebar barang items.
 |---
 {: .table .table-bordered .bg-light}
 
@@ -117,7 +117,7 @@ $('.content-wrapper').IFrame({
 | Method | Description
 |-|-
 |createTab| Create tab by title, link & uniqueName. Available arguments: title `String`, link `String`, uniqueName `String`, autoOpen `Boolean/Optional`.
-|openTabSidebar| Create tab by sidebar menu item. Available arguments: item `String|jQuery Object`, autoOpen `Boolean/Optional`.
+|openTabSidebar| Create tab by sidebar barang item. Available arguments: item `String|jQuery Object`, autoOpen `Boolean/Optional`.
 |switchTab| Switch tab by iframe tab navbar item. Available arguments: item `String|jQuery Object`.
 |removeActiveTab| Remove active iframe tab.
 {: .table .table-bordered .bg-light}

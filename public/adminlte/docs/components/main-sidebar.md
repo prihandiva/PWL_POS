@@ -29,10 +29,10 @@ The sidebar used in this page to the left provides an example of what your sideb
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">
-      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="barang">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-        <li class="nav-item menu-open">
+        <li class="nav-item barang-open">
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
@@ -66,7 +66,7 @@ The sidebar used in this page to the left provides an example of what your sideb
         </li>
       </ul>
     </nav>
-    <!-- /.sidebar-menu -->
+    <!-- /.sidebar-barang -->
   </div>
   <!-- /.sidebar -->
 </aside>
@@ -123,7 +123,7 @@ You can add this code above user-panel or nav-sidebar:
 
 #### Sidebar Custom Area
 
-You can add a Custom Area inside the Sidebar to display extra buttons or text below your menu entries.
+You can add a Custom Area inside the Sidebar to display extra buttons or text below your barang entries.
 
 You can simply add this code after the `div.sidebar`:
 
@@ -158,4 +158,4 @@ You can simply add this code after the `div.sidebar`:
 > You can also use `.text-sm` on `.nav-sidebar` or `.brand-link` for smaller font.
 {: .quote-info}
 
-For more information about the JS part of the sidebar, please visit the [PushMenu plugin page]({% link javascript/push-menu.md %})
+For more information about the JS part of the sidebar, please visit the [PushMenu plugin page]({% link javascript/push-barang.md %})

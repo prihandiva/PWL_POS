@@ -7364,7 +7364,7 @@ var Buttons = /*#__PURE__*/function () {
           },
           click: function click(event) {
             event.stopPropagation();
-            var $parent = external_jQuery_default()('.' + className).find('.note-dropdown-menu');
+            var $parent = external_jQuery_default()('.' + className).find('.note-dropdown-barang');
             var $button = external_jQuery_default()(event.target);
             var eventName = $button.data('event');
             var value = $button.attr('data-value');
@@ -9918,7 +9918,7 @@ var HintPopover = /*#__PURE__*/function () {
       'link': 'note-icon-link',
       'unlink': 'note-icon-chain-broken',
       'magic': 'note-icon-magic',
-      'menuCheck': 'note-icon-menu-check',
+      'menuCheck': 'note-icon-barang-check',
       'minus': 'note-icon-minus',
       'orderedlist': 'note-icon-orderedlist',
       'pencil': 'note-icon-pencil',
@@ -10040,7 +10040,7 @@ var statusbar = renderer.create(['<output class="note-status-output" role="statu
 var airEditor = renderer.create('<div class="note-editor note-airframe"/>');
 var airEditable = renderer.create(['<div class="note-editable" contentEditable="true" role="textbox" aria-multiline="true"></div>', '<output class="note-status-output" role="status" aria-live="polite"></output>'].join(''));
 var buttonGroup = renderer.create('<div class="note-btn-group btn-group">');
-var dropdown = renderer.create('<div class="note-dropdown-menu dropdown-menu" role="list">', function ($node, options) {
+var dropdown = renderer.create('<div class="note-dropdown-barang dropdown-barang" role="list">', function ($node, options) {
   var markup = Array.isArray(options.items) ? options.items.map(function (item) {
     var value = typeof item === 'string' ? item : item.value || '';
     var content = options.template ? options.template(item) : item;
@@ -10062,7 +10062,7 @@ var dropdownButtonContents = function dropdownButtonContents(contents) {
   return contents;
 };
 
-var dropdownCheck = renderer.create('<div class="note-dropdown-menu dropdown-menu note-check" role="list">', function ($node, options) {
+var dropdownCheck = renderer.create('<div class="note-dropdown-barang dropdown-barang note-check" role="list">', function ($node, options) {
   var markup = Array.isArray(options.items) ? options.items.map(function (item) {
     var value = typeof item === 'string' ? item : item.value || '';
     var content = options.template ? options.template(item) : item;

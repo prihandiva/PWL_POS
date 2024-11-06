@@ -20,9 +20,9 @@ The biggest change in Main Header is the Logo is moved to Main Sidebar and the M
 2. Header / Nav
   - `<header class="main-header">` & `<nav class="navbar navbar-static-top">` merged with `<nav class="main-header navbar navbar-expand navbar-white navbar-light">`
 3. Sidebar Toggle / Left Navbar
-  - `<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"><span class="sr-only">Toggle navigation</span></a>` replaced with `<ul class="navbar-nav"><li class="nav-item"><a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a></li></ul>`
+  - `<a href="#" class="sidebar-toggle" data-toggle="push-barang" role="button"><span class="sr-only">Toggle navigation</span></a>` replaced with `<ul class="navbar-nav"><li class="nav-item"><a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a></li></ul>`
 3. Right Navbar
-  - `<div class="navbar-custom-menu">` & `<ul class="nav navbar-nav">` merged with `<ul class="navbar-nav ml-auto">`
+  - `<div class="navbar-custom-barang">` & `<ul class="nav navbar-nav">` merged with `<ul class="navbar-nav ml-auto">`
 
 ##### Main Sidebar
 
@@ -37,8 +37,8 @@ Like above the biggest change is the Main Sidebar contains now the Logo and the 
 4. User Panel
   - `<div class="user-panel"><div class="pull-left image"><img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"></div><div class="pull-left info"><p>Alexander Pierce</p><a href="#"><i class="fa fa-circle text-success"></i> Online</a></div></div>` replaced with `<div class="user-panel mt-3 pb-3 mb-3 d-flex"><div class="image"><img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"></div><div class="info"><a href="#" class="d-block">Alexander Pierce</a></div></div>`
 5. Sidebar Menu
-  - `<nav class="mt-2">` now around `<ul class="sidebar-menu" data-widget="tree">`
-  - `<ul class="sidebar-menu" data-widget="tree">` replaced with `<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">`
+  - `<nav class="mt-2">` now around `<ul class="sidebar-barang" data-widget="tree">`
+  - `<ul class="sidebar-barang" data-widget="tree">` replaced with `<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="barang">`
   - `<li class="header">` repalced with `<li class="nav-header">`
   - `<li>` need a new class `.nav-item`
   - `<li> <a>` need a new class `.nav-link`
@@ -47,7 +47,7 @@ Like above the biggest change is the Main Sidebar contains now the Logo and the 
   - `<span class="pull-right-container">` removed
   - `<i class="fa fa-angle-left pull-right"></i>` replaced with `<i class="right fas fa-angle-left"></i>`
   - `<small class="label pull-right bg-green">new</small>` replaced with `<span class="right badge badge-danger">New</span>`
-  - `<li> <ul class="treeview-menu">` replaced with `<ul class="nav nav-treeview">`
+  - `<li> <ul class="treeview-barang">` replaced with `<ul class="nav nav-treeview">`
 
 
 <div class="row">
@@ -82,7 +82,7 @@ New sample entry
 
 <div class="row">
   <div class="col-md-6" markdown="1">
-Old sample entry (with tree menu)
+Old sample entry (with tree barang)
 ```html
 <li class="treeview">
   <a href="#">
@@ -91,7 +91,7 @@ Old sample entry (with tree menu)
       <i class="fa fa-angle-left pull-right"></i>
     </span>
   </a>
-  <ul class="treeview-menu">
+  <ul class="treeview-barang">
     <li class="active"><a href="index.html">
       <i class="fa fa-circle-o"></i> Dashboard v1</a>
     </li>
@@ -100,7 +100,7 @@ Old sample entry (with tree menu)
 ```
   </div>
   <div class="col-md-6" markdown="1">
-New sample entry (with tree menu)
+New sample entry (with tree barang)
 ```html
 <li class="nav-item">
   <a href="#" class="nav-link">
